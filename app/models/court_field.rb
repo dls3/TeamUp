@@ -1,0 +1,2 @@
+class CourtField < ApplicationRecord
+end

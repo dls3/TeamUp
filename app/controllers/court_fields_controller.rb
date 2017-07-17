@@ -1,0 +1,2 @@
+class CourtFieldsController < ApplicationController
+end
