@@ -1,8 +1,8 @@
 class CourtFieldsController < ApplicationController
-  require 'csv'
 
-  CSV.foreach('tennis_courts_facilities_data_2017.csv', :headers => true) do |row|
-    Moulding.create!(row.to_hash)
+  def import
+    CourtField.import(params[:file])
+    redirect_to root_url, notice: "Tennis courts imported"
   end
 
 end
