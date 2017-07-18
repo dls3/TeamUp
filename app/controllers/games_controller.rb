@@ -13,11 +13,12 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.new
+    @user = User.find_by id: params["user_id"]
   end
 
   def create
     @game = Game.new(game_params)
-    @game.user = current_user
+    @game.user_id = current_user.id
 
     if @game.save
       redirect_to root_url
