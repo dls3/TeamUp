@@ -1,6 +1,6 @@
 class CreateGameEvents < ActiveRecord::Migration[5.1]
   def change
-    create_table :game_events do |t|
+    create_table :games do |t|
       t.string :date
       t.string :time
       t.integer :user_id

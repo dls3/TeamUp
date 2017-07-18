@@ -1,4 +1,4 @@
-class GameEvent < ApplicationRecord
+class Game < ApplicationRecord
 
   belongs_to :users
 

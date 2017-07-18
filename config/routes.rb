@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/sessions/new' => 'sessions#new'
+  get '/games/new' => 'games#new'
 
   resources :users
 
