@@ -23,5 +23,3 @@ csv.each do |row|  # headers become keys
     puts "#{court.name} was saved"
   end
 end
-
-# puts "There are #{CourtField.count} courts saved in the court_fields table"
