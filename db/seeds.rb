@@ -7,7 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+# ADDING TENNIS COURTS TO COURT_FIELDS FROM CSV
 require 'csv'
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'tennis_courts_facilities_data_2017.csv'))
-puts csv_text
+csv = CSV.parse(csv_text, :headers => true) #, :encoding => 'ISO-8859-1')
+csv.each do |row|  # headers become keys
+  t = CourtField.new
+  t.name = row['NAME']
+  t.address = row['ADDRESS']
+  t.neighbourhood = row['NEIGHBOURHOOD']
+  t.save
+  puts "#{t.name} saved"
+end
+
+puts "There are #{CourtField.count} rows in the court_fields table"
