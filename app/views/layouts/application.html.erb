@@ -3,10 +3,11 @@
   <head>
 
     <%= csrf_meta_tags %>
-    <link type= 'text/css' rel= 'stylesheet' href= 'css/style.css'>
+    <link type= 'text/css' rel= 'stylesheet' href= 'stylesheets/style.css'>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
 
     <title>TeamUp</title>
 
@@ -15,6 +16,9 @@
   <body>
 
     <header>
+      <h1 id = 'logo'> Team Up </h1>
+      <h2 id = 'slogan'> Join in with TeamUp! </h2>
+
       <nav class = 'navbar'>
           <a href = '/index'> HOME </a>
           <a href = '/games/new'> START A GAME </a>
