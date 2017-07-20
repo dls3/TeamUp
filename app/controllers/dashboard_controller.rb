@@ -2,7 +2,7 @@ class DashboardController < ApplicationController
 
   def index
 
-    render layout: "map"
+    # render layout: "map"
 
   end
 
