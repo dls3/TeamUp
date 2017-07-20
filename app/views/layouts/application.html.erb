@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TeamUp</title>
-    <%= csrf_meta_tags %>
 
+    <%= csrf_meta_tags %>
+    <link type= 'text/css' rel= 'stylesheet' href= 'css/style.css'>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="utf-8">
+
+    <title>TeamUp</title>
+
   </head>
 
   <body>
-    <%= yield %>
+
+    <header>
+      <nav class = 'navbar'>
+          <a href = '/index'> HOME </a>
+          <a href = '/about'> ABOUT US </a>
+          <a href = '/games/new'> START A GAME </a>
+          <a href = '/search'> FIND A GAME </a>
+      </nav>
+    </header>
+
+    <main>
+
+      <%= yield %>
+
+    </main>
+
   </body>
+
+  <footer>
+    <h4> &copy;TeamUP | Bitmaker 2017 </h4>
+  </footer>
+
 </html>

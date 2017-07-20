@@ -1,0 +1,15 @@
+
+<!-- search bar -->
+
+<!--google map goes here with pins of where games are happening  -->
+
+<!-- views of all games -->
+
+
+<h2 class = 'current_games'> Current Games </h2>
+
+  <% @games.each do |game| %>
+   <p>
+    <a href=/games/<%=game.id %>><%=game.name%></a> <%= game.sport %></a>
+  </p>
+ <% end %>
