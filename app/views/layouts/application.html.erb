@@ -6,25 +6,19 @@
   <head>
 
     <title>TeamUp</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <%= stylesheet_link_tag    "https://fonts.googleapis.com/css?family=Josefin+Sans:700|Libre+Baskerville" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
-
-
-    <%= csrf_meta_tags %>
     <link type= 'text/css' rel= 'stylesheet' href= 'stylesheets/style.css'>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
 
-    <title>TeamUp</title>
-
   </head>
+
   <body>
 
       <h1 id = 'logo'> Team Up </h1>
@@ -50,7 +44,10 @@
     <%= yield %>
   </main>
 
-
+<!-- google maps url -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlGnBvt0DySOTD4Oh0AJ3N-vWRDt1xnkE&callback=initMap"
+  async defer></script>
+  
   </body>
 
   <footer>

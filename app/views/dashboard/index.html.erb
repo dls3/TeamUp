@@ -1,17 +1,23 @@
+
 <h1>Dashboard</h1>
 
 <!-- search bar -->
 
-<div id="map"></div>
+<div id="map">
+  <script>
+  // make sure map has dimensions in order to view
+    function initMap() {
+      console.log('inside init map');
 
-<script>
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 43.642, lng: -79.387},
-      zoom: 12
-    });
-  }
-</script>
+      console.log( document.getElementById( 'map' ) );
+
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 43.642, lng: -79.387},
+        zoom: 12
+      });
+    }
+  </script>
+</div>
 
 
 <!-- views of all games -->
