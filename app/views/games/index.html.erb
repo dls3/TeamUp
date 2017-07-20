@@ -1,0 +1,7 @@
+<h2 class = 'current_games'> Current Games </h2>
+
+  <% @games.each do |game| %>
+   <p>
+    <a href=/games/<%=game.id %>><%=game.name%></a> <%= game.sport %></a>
+  </p>
+ <% end %>

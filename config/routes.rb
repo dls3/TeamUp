@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new', :as => :login
   get 'logout' => 'sessions#destroy', :as => :logout
   get '/games/new' => 'games#new'
+  get '/dashboard/' => 'dashboard#index'
 
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destory]

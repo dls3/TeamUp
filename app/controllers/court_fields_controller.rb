@@ -1,2 +1,3 @@
 class CourtFieldsController < ApplicationController
+
 end
