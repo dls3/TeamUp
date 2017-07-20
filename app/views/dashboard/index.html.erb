@@ -1,10 +1,23 @@
 
+<h1>Dashboard</h1>
+
+<div id="map"></div>
+
+<script>
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 43.642, lng: -79.387},
+      zoom: 8
+    });
+  }
+</script>
+
+
 <!-- search bar -->
 
 <!--google map goes here with pins of where games are happening  -->
 
 <!-- views of all games -->
-
 
 <h2 class = 'current_games'> Current Games </h2>
 
@@ -13,3 +26,4 @@
     <a href=/games/<%=game.id %>><%=game.name%></a> <%= game.sport %></a>
   </p>
  <% end %>
+

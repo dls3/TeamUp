@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/sessions/new' => 'sessions#new'
   post '/sessions/new' => 'sessions#new'
   get '/games/new' => 'games#new'
+  get '/dashboard/' => 'dashboard#index'
 
   resources :users
   resources :games
