@@ -2,6 +2,7 @@
   font-family: 'Faster One', cursive;
 }
 
-#slogan {
-
+#map {
+  max-width: 50%;
+  max-height: 50%;
 }
