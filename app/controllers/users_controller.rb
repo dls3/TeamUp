@@ -12,7 +12,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = 'Welcome!'
-      auto_login(@user)
       redirect_to root_url
     else
       flash.now[:error] = 'You missed, try again!'

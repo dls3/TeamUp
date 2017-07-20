@@ -4,12 +4,28 @@ class SessionsController < ApplicationController
     @user = User.new
   end
 
+
   def create
-    if @user = login(params[:email], params[:password], params[:remember_me])
-      redirect_back_to_or_to(root_url, notice: 'Play time!')
+    @user = User.find_by(email: params[:session][:email])
+    puts '--------'
+    puts (params[:session][:password])
+
+    puts @user
+    puts @user.authenticate(params[:session][:password])
+    if @user && @user.authenticate(params[:session][:password])
+
+      # Send a cookie to user's browser
+      session[:user_id] = @user.id
+      puts '-----------'
+      puts session[:user_id]
+
+      flash[:notice] = 'Play time!'
+      redirect_to root_url
     else
       flash.now[:alert] = 'Login failed - swing again!'
-      render action: 'new'
+      render :new
+      puts '--------'
+      puts 'failure'
     end
   end
 
