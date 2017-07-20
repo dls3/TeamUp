@@ -1,0 +1,56 @@
+<h1>Lets start a game!</h1>
+
+<%= form_for @game do |f| %>
+
+  <div class = "start_game_error">
+    <%= form_for @game do |f| %>
+      <% if @game.errors.any? %>
+        <div id = "error_explanation">
+          <h3> There are <%= @game.errors.count %> issues, please true again:</h3>
+          <ol>
+            <% @game.errors.full_messages.each do |msg| %>
+              <li><%= msg %> </li>
+            <% end %>
+          </ol>
+        </div>
+      <%end%>
+    <%end%>
+
+  <div class="field">
+    <%= f.label :sport %><br>
+    <%= f.text_field :sport %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :event_name %><br>
+    <%= f.text_field :event_name %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :time %><br>
+    <%= f.text_field :time %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :skill %><br>
+    <%= f.text_field :skill %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :players_needed %><br>
+    <%= f.text_field :players_needed %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :current_players %><br>
+    <%= f.text_field :current_players %>
+  </div>
+
+  <%= f.submit 'Start Game' %>
+
+<% end %>

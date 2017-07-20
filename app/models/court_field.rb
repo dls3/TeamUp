@@ -1,6 +1,6 @@
 class CourtField < ApplicationRecord
 
-  has_many :game_events
+  has_many :games
   validates :name, :address, :neighbourhood, presence: true
 
 end

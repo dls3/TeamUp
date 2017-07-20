@@ -1,9 +1,9 @@
 class Rsvp < ApplicationRecord
   belongs_to :users
-  belongs_to :game_events
+  belongs_to :games
 
   validates :require_login,
-  
+
 
 
   def require_login
