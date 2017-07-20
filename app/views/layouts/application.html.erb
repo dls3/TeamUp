@@ -17,10 +17,20 @@
     <header>
       <nav class = 'navbar'>
           <a href = '/index'> HOME </a>
-          <a href = '/about'> ABOUT US </a>
           <a href = '/games/new'> START A GAME </a>
           <a href = '/search'> FIND A GAME </a>
+          <a href = '/about'> ABOUT US </a>
       </nav>
+
+      <nav class="account-nav">
+        <% if current_user %>
+          <%= link_to "Logout", :logout, method: :delete %>
+        <% else %>
+          <%= link_to "Sign Up", new_user_path %> |
+          <%= link_to "Login", :login %>
+        <% end %>
+      </nav>
+
     </header>
 
     <main>
