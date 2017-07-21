@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/index' => 'dashboard#index'
   get '/sessions' => 'sessions#new', :as => :login
   get '/sessions' => 'sessions#create'
-  get '/logout' => 'sessions#destroy', :as => :logout
+  post '/logout' => 'sessions#destroy', :as => :logout
   get '/games/new' => 'games#new'
   get '/dashboard/' => 'dashboard#index'
   get '/about' =>  'dashboard#about'
