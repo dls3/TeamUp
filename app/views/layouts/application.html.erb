@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-  <%= render partial: 'shared/head' %>
-
   <head>
-
     <title>TeamUp</title>
 
     <meta charset="utf-8">
@@ -15,13 +12,16 @@
     <%= csrf_meta_tags %>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Sarpanch" rel="stylesheet">
 
   </head>
 
   <body>
 
+
       <a href = '/index' id='logo'> Team Up </a>
-      <h2 id = 'slogan'> Join in with TeamUp! </h2>
+
+
 
     <nav class = 'navbar'>
         <a href = '/index'> HOME |</a>
@@ -37,9 +37,11 @@
       <ul>
         <li><%= link_to "LOGIN", :login %></li>
         <li><%= link_to "REGISTER", new_user_path %></li>
+
         <% if current_user %>
         <li><%= link_to "LOGOUT", logout_path(id:current_user), method: :destroy %></li>
         <% end %>
+
       </ul>
     </nav>
 
@@ -50,36 +52,6 @@
 
 
 
-    <header>
-      <h1 id = 'logo'> Team Up </h1>
-      <h2 id = 'slogan'> Join in with TeamUp! </h2>
-
-      <nav class = 'navbar'>
-          <a href = '/index'> HOME </a>
-          <a href = '/users/profile'> MY PROFILE </a>
-          <a href = '/games/new'> START A GAME </a>
-          <a href = '/search'> FIND A GAME </a>
-          <a href = '/about'> ABOUT US </a>
-      </nav>
-
-      <nav class="account-nav">
-        <% if current_user %>
-          <%= link_to "Logout", :logout, method: :delete %>
-        <% else %>
-          <%= link_to "Sign Up", new_user_path %> |
-          <%= link_to "Login", :login %>
-        <% end %>
-      </nav>
-
-    </header>
-
-    <main>
-
-      <%= yield %>
-
-    </main>
-
-
 <!-- google maps url -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlGnBvt0DySOTD4Oh0AJ3N-vWRDt1xnkE&callback=initMap&libraries=places"
   async defer></script>
@@ -88,7 +60,7 @@
   </body>
 
   <footer>
-    <h4> &copy;TeamUP | Bitmaker 2017 </h4>
+    <h4 id = "footer"> &copy;TeamUP | Bitmaker 2017 </h4>
   </footer>
 
 </html>

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/new_user' => 'users#new'
   post '/users' => 'users#create'
 
-
+  resources :users
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destory]
   resources :games
