@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/dashboard/' => 'dashboard#index'
   get '/about' =>  'dashboard#about'
   get '/search' => 'dashboard#search'
-
+  get '/users/profile' => 'users#profile'
 
   get '/new_user' => 'users#new'
   post '/users' => 'users#create'
