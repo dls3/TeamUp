@@ -1,1 +1,17 @@
+<h1> Search for a game </h1>
 
+<div>
+  <%= form_tag("/search", method: "get") do %>
+   <%= label_tag(:games, "Sport:") %>
+   <%= text_area_tag(:game) %></br>
+   <%= label_tag(:neighborhood, "Neighbourhood:") %>
+  <%= text_area_tag(:neighborhood) %></br><br>
+   <%= submit_tag("Search") %>
+  <% end %>
+</div>
+
+<% if @games.present? %>
+  <%= render @games %>
+<%else%>
+  <p> There are no games that match your search </p>
+<%end%>
