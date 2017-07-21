@@ -5,9 +5,5 @@ class CourtField < ApplicationRecord
 
 # https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyDpZWSriktrzfz64A9G6mcem3mYHuIJqpM
 
-  def geocode
-    
-
-  end
 
 end

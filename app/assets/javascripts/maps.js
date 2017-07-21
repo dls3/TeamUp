@@ -44,7 +44,6 @@ function createMarker(place) {
   });
 };
 
-
 if( document.readyState === 'complete' ) {
     console.log( 'document is already ready, just execute code here' );
     myInitCode();
