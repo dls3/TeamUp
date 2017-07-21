@@ -18,6 +18,8 @@ csv.each do |row|  # headers become keys
 
     court.name = row['NAME']
     court.address = row['ADDRESS']
+    court.lat = row['lat']
+    court.long = row['long']
     court.neighbourhood = row['DISTRICT']
     court.save
     puts "#{court.name} was saved"
