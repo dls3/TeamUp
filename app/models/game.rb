@@ -1,6 +1,6 @@
 class Game < ApplicationRecord
 
-  belongs_to :users
+  belongs_to :user
 
   validates :players_needed, presence: true, numericality: true
   validates :current_players, presence: true, numericality: true

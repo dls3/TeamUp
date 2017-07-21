@@ -1,0 +1,22 @@
+<span class = "name" > <%= @game.event_name %> </span> <br>
+
+<div class = "info">
+
+<p> Description:  <%= @game.description %> </p>
+<p> Date: <%= @game.date %> </p>
+<p> Time: <%= @game.time %> </p>
+<p> Skill:  <%= @game.skill %> </p>
+<p> Sport: <%= @game.sport %> </p>
+
+
+<% if current_user %>
+
+<%= link_to "Edit Game", edit_game_path(@game) %>
+
+<% else %>
+  <%= link_to "Sign Up", new_user_path %>
+<% end %>
+
+</div>
+
+<%= link_to("Back to Home", root_url, class:'back_home') %>

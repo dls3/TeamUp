@@ -23,3 +23,23 @@ csv.each do |row|  # headers become keys
     puts "#{court.name} was saved"
   end
 end
+
+# Creating fake game
+
+masha = User.create!(
+  name: "Masha",
+  email: "masha@gmail.com",
+  password: "bitmaker"
+)
+
+tennis_game = Game.create!(
+  date: "September 24, 2017",
+  time: "4pm",
+  skill: "low",
+  event_name: "Tennis Game",
+  sport: "Tennis",
+  players_needed: 2,
+  current_players: 1,
+  description: "Looking for a partner to play tennis with!",
+  user: masha 
+)

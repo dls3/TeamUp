@@ -25,10 +25,11 @@ end
 
   def create
     @game = Game.new(game_params)
-    @game.user_id = current_user.id
+    @game.user_id = session[:user_id]
+    # @game.user_id = current_user.id
 
     if @game.save
-      redirect_to root_url
+      redirect_to game_path(params[:game_id])
     else
       render :new
     end
