@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       # Send a cookie to user's browser
       session[:user_id] = @user.id
 
-      flash[:notice] = 'Play time!'
+      flash.now[:alert] = 'Play time!'
       redirect_to '/'
     else
       flash.now[:alert] = 'Login failed - swing again!'
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    flash[:notice] = "See you on the court next time around!"
+    flash.now[:alert] = "See you on the court next time around!"
     redirect_to root_url
   end
 
