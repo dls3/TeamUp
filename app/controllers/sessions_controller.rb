@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
 
       flash[:notice] = 'Play time!'
-      redirect_to root_url
+      redirect_to '/'
     else
       flash.now[:alert] = 'Login failed - swing again!'
       render :new
