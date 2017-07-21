@@ -1,10 +1,89 @@
-#logo {
-  font-family: 'Faster One', cursive;
+/*#logo {
+  font-family: 'Allerta Stencil', sans-serif;
+  font-weight: bold;
+  font-size: 80px;
+  color:black;
+  text-shadow: 2px 2px #57bc90;
+
+  height: 200px;
+  position:absolute;
+  left:0;
+  top: 0;
+  width: 100%;
+  display:block;
 }
 
+.navbar {
+  font-size: 20px;
+  margin:auto;
+  padding-top: 15px;
+  text-decoration: none;
+}
+
+.navbar a{
+  color: black;
+  margin-left: 30px;
+  text-decoration: none;
+}
+
+.navbar a:hover{
+  color: white;
+  background-color: #C1C1C1;
+}
+
+.site-nav {
+  font-size: 15px;
+  position: absolute;
+  right: 0;
+  top: 5px;
+  display: inline-block;
+}
+
+.site-nav li{
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.site-nav a{
+  color: black;
+  text-decoration: none;
+}
+
+#slogan {
+  position: absolute;
+  top: 130px;
+  display: block;
+  font-size: 40px;
+  left: 5px;
+  font-family: 'Sarpanch', sans-serif;
+  color: #ffdd00;
+}
+
+.about {
+  position: absolute;
+  top: 30%;
+  margin: auto;
+  text-align: center;
+  width: 1400px;
+  left: 100px;
+}*/
+
 #map {
+  position: absolute;
+  clear: both;
   width: 1000px;
   height: 500px;
-  display: block;
   margin: auto;
+  top: 300px;
+}
+
+#footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+    margin: 0 auto;
 }
