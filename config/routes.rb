@@ -5,15 +5,19 @@ Rails.application.routes.draw do
   get '/index' => 'dashboard#index'
   get '/sessions' => 'sessions#new', :as => :login
   get '/sessions' => 'sessions#create'
-  get '/logout' => 'sessions#destroy', :as => :logout
+  post '/logout' => 'sessions#destroy', :as => :logout
   get '/games/new' => 'games#new'
   get '/dashboard/' => 'dashboard#index'
+
+  get '/users/profile' => 'users#profile'
+
   get '/about' =>  'dashboard#about'
   get '/search' => 'dashboard#search'
-
+  get '/users/profile' => 'users#profile'
 
   get '/new_user' => 'users#new'
   post '/users' => 'users#create'
+
 
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destory]

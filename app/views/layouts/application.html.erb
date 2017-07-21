@@ -10,7 +10,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
-    <link type= 'text/css' rel= 'stylesheet' href= '/stylesheets/style.css'>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
 
@@ -21,19 +20,20 @@
       <h1 id = 'logo'> Team Up </h1>
       <h2 id = 'slogan'> Join in with TeamUp! </h2>
 
+    <nav class = 'navbar'>
+        <a href = '/index'> HOME </a>
+        <a href = '/users/profile'> PROFILE </a>
+        <a href = '/games/new'> START A GAME </a>
+        <a href = '/search'> FIND A GAME </a>
+        <a href = '/about'> ABOUT US </a>
+    </nav>
+
     <nav class="site-nav">
       <ul>
         <li><%= link_to "LOGIN", :login %></li>
         <li><%= link_to "REGISTER", new_user_path %></li>
-        <li><%= link_to "LOGOUT", sessions_path, method: :destroy %></li>
+        <li><%= link_to "LOGOUT", logout_path(id:current_user), method: :destroy %></li>
       </ul>
-    </nav>
-
-    <nav class = 'navbar'>
-        <a href = '/index'> HOME </a>
-        <a href = '/games/new'> START A GAME </a>
-        <a href = '/search'> FIND A GAME </a>
-        <a href = '/about'> ABOUT US </a>
     </nav>
 
 
@@ -41,9 +41,42 @@
     <%= yield %>
   </main>
 
+
+
+    <header>
+      <h1 id = 'logo'> Team Up </h1>
+      <h2 id = 'slogan'> Join in with TeamUp! </h2>
+
+      <nav class = 'navbar'>
+          <a href = '/index'> HOME </a>
+          <a href = '/users/profile'> MY PROFILE </a>
+          <a href = '/games/new'> START A GAME </a>
+          <a href = '/search'> FIND A GAME </a>
+          <a href = '/about'> ABOUT US </a>
+      </nav>
+
+      <nav class="account-nav">
+        <% if current_user %>
+          <%= link_to "Logout", :logout, method: :delete %>
+        <% else %>
+          <%= link_to "Sign Up", new_user_path %> |
+          <%= link_to "Login", :login %>
+        <% end %>
+      </nav>
+
+    </header>
+
+    <main>
+
+      <%= yield %>
+
+    </main>
+
+
 <!-- google maps url -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlGnBvt0DySOTD4Oh0AJ3N-vWRDt1xnkE&callback=initMap&libraries=places"
   async defer></script>
+
 
   </body>
 
