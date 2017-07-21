@@ -25,7 +25,9 @@
 
     <nav class = 'navbar'>
         <a href = '/index'> HOME </a>
+        <% if current_user %>
         <a href = '/users/profile'> PROFILE </a>
+        <% end %>
         <a href = '/games/new'> START A GAME </a>
         <a href = '/search'> FIND A GAME </a>
         <a href = '/about'> ABOUT US </a>
@@ -35,7 +37,9 @@
       <ul>
         <li><%= link_to "LOGIN", :login %></li>
         <li><%= link_to "REGISTER", new_user_path %></li>
+        <% if current_user %>
         <li><%= link_to "LOGOUT", logout_path(id:current_user), method: :destroy %></li>
+        <% end %>
       </ul>
     </nav>
 
