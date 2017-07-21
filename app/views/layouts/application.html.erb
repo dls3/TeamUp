@@ -18,15 +18,18 @@
 
   <body>
 
-      <h1 id = 'logo'> TeamUp </h1>
-      <h2 id = 'slogan'> Join in with TeamUp! </h2>
+
+      <a href = '/index' id='logo'> Team Up </a>
+
 
 
     <nav class = 'navbar'>
-        <a href = '/index'> HOME </a>
-        <a href = '/users/profile'> PROFILE </a>
-        <a href = '/games/new'> START A GAME </a>
-        <a href = '/search'> FIND A GAME </a>
+        <a href = '/index'> HOME |</a>
+        <% if current_user %>
+        <a href = '/users/profile'> PROFILE |</a>
+        <% end %>
+        <a href = '/games/new'> START A GAME |</a>
+        <a href = '/search'> FIND A GAME |</a>
         <a href = '/about'> ABOUT US </a>
     </nav>
 
@@ -34,9 +37,11 @@
       <ul>
         <li><%= link_to "LOGIN", :login %></li>
         <li><%= link_to "REGISTER", new_user_path %></li>
-      <% if current_user %>
+
+        <% if current_user %>
         <li><%= link_to "LOGOUT", logout_path(id:current_user), method: :destroy %></li>
-      <% end %>
+        <% end %>
+
       </ul>
     </nav>
 
