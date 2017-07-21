@@ -12,6 +12,7 @@ class GamesController < ApplicationController
     else
       @games = Game.all.order('created_at DESC')
   end
+end
 
   def show
     @game = Game.find(params[:id])
