@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.new
+    @user = User.find(params[:user_id])
   end
 
   def create
@@ -28,13 +28,13 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find(params[:id])
+  def profile
+    @user = current_user
   end
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password)
+    params.require(:user).permit(:name, :email, :password)
   end
 
 end
