@@ -36,36 +36,6 @@
       </ul>
     </nav>
 
-
-  <main>
-    <%= yield %>
-  </main>
-
-
-
-    <header>
-      <h1 id = 'logo'> Team Up </h1>
-      <h2 id = 'slogan'> Join in with TeamUp! </h2>
-
-      <nav class = 'navbar'>
-          <a href = '/index'> HOME </a>
-          <a href = '/users/profile'> MY PROFILE </a>
-          <a href = '/games/new'> START A GAME </a>
-          <a href = '/search'> FIND A GAME </a>
-          <a href = '/about'> ABOUT US </a>
-      </nav>
-
-      <nav class="account-nav">
-        <% if current_user %>
-          <%= link_to "Logout", :logout, method: :delete %>
-        <% else %>
-          <%= link_to "Sign Up", new_user_path %> |
-          <%= link_to "Login", :login %>
-        <% end %>
-      </nav>
-
-    </header>
-
     <main>
 
       <%= yield %>
