@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'dashboard#index'
 
+  get '/users/own_games' => 'users#showr'
+
   get '/index' => 'dashboard#index'
   get '/sessions' => 'sessions#new', :as => :login
   get '/sessions' => 'sessions#create'
@@ -18,8 +20,7 @@ Rails.application.routes.draw do
   get '/new_user' => 'users#new'
   post '/users' => 'users#create'
 
-  resources :users
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show, :edit, :update]
   resources :sessions, only: [:new, :create, :destory]
   resources :games, only: [:new, :create, :show, :edit, :update]
   resources :dashboard
