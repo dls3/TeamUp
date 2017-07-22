@@ -67,6 +67,26 @@
   width: 1400px;
   left: 100px;
 }*/
+.loginform_container {
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  position: fixed;
+}
+.loginform {
+    display: block;
+    width: 400px;
+    height: 18em;
+    padding: 2em;
+    background-color: #b9c2cc;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 300px;
+    left: 0;
+    right: 0;
+}
 
 #map {
   position: absolute;

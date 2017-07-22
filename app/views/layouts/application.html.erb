@@ -36,9 +36,10 @@
         <% if current_user %>
         <li><%= link_to "LOGOUT", logout_path(id:current_user), method: :destroy %></li>
         <% elsif %>
-        <li><%= link_to "LOGIN", :login %></li>
+        <li><span id = "loginbutton"><%= link_to "LOGIN", remote: true %></span></li>
         <li><%= link_to "REGISTER", new_user_path %></li>
       <% end %>
+      <!-- YOU ARE NOW LOGGED IN AS -->
       <div class = "welcome">
         <% if current_user %>
           <%= "You are currently logged in as: #{current_user.email}" %>
