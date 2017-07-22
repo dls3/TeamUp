@@ -12,13 +12,6 @@ function initMap() {
   createMarkers(map);
 }
 
-  // REMOVE AND INPUT MANUALLY
-  // var request = {
-  //   location: toronto,
-  //   radius: 1000,    // radius in meters
-  //   type: ['stadium']
-  // };
-
   var courts = [
     ['Beaches Park', 43.66616962,-79.29970757, 4],
     ["Hanlan's Point Park", 43.61994414, -79.39161271, 5],
@@ -41,6 +34,19 @@ function createMarkers(map) {
 
   // Origins, anchor positions and coordinates of the marker increase in the X
   // direction to the right and in the Y direction down.
+
+  var contentString = '<div id="content">'+
+  '<div id="siteNotice">'+
+  '</div>'+
+  '<h1 id="firstHeading" class="firstHeading">Join this game!</h1>'+
+  '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match' +
+  '</div>'+
+  '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+
   var image = {
     url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
     // This marker is 20 pixels wide by 32 pixels high.
@@ -67,6 +73,9 @@ function createMarkers(map) {
       shape: shape,
       title: court[0],
       zIndex: court[3]
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
     });
   };
 };
