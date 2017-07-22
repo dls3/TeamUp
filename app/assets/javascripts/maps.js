@@ -1,56 +1,71 @@
-var map;
-var service;
-var infowindow;
-
 function initMap() {
   console.log('inside init map');
   console.log( document.getElementById('map'));
 
   var toronto = new google.maps.LatLng(43.642,-79.387);
 
-  map = new google.maps.Map(document.getElementById('map'), {
+  var map = new google.maps.Map(document.getElementById('map'), {
     center: toronto,
-    zoom: 12
+    zoom: 11
   });
 
-  var request = {
-    location: toronto,
-    radius: 1000,    // radius in meters
-    type: ['stadium']
-  };
-
-  service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, callback);
-};
-
-function callback(results, status) {
-  if (status === google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
-      createMarker(results[i]);
-    };
-  };
-};
-
-function createMarker(place) {
-  var placeLoc = place.geometry.location;
-  var marker = new google.maps.Marker({
-    map: map,
-    position: place.geometry.location
-  });
-
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name);
-    infowindow.open(map, this);
-  });
-};
-
-
-if( document.readyState === 'complete' ) {
-    console.log( 'document is already ready, just execute code here' );
-    myInitCode();
-} else {
-    document.addEventListener('DOMContentLoaded', function () {
-        console.log( 'document was not ready, place code here' );
-        myInitCode();
-    });
+  createMarkers(map);
 }
+
+  // REMOVE AND INPUT MANUALLY
+  // var request = {
+  //   location: toronto,
+  //   radius: 1000,    // radius in meters
+  //   type: ['stadium']
+  // };
+
+  var courts = [
+    ['Beaches Park', 43.66616962,-79.29970757, 4],
+    ["Hanlan's Point Park", 43.61994414, -79.39161271, 5],
+    ['Malvern Park', 43.80901631, -79.21793821, 3],
+    ['Oriole Park', 43.6969922, -79.39928015, 2],
+    ['Rosedale Park', 43.68304016, -79.380109, 1],
+    ['Shawnee Park', 43.79754498, -79.33870752, 6]
+  ];
+
+  // service = new google.maps.places.PlacesService(map);
+  // service.nearbySearch(request, callback);
+// };
+
+
+function createMarkers(map) {
+  // Adds markers to the map.
+
+  // Marker sizes are expressed as a Size of X,Y where the origin of the image
+  // (0,0) is located in the top left of the image.
+
+  // Origins, anchor positions and coordinates of the marker increase in the X
+  // direction to the right and in the Y direction down.
+  var image = {
+    url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+    // This marker is 20 pixels wide by 32 pixels high.
+    size: new google.maps.Size(20, 32),
+    // The origin for this image is (0, 0).
+    origin: new google.maps.Point(0, 0),
+    // The anchor for this image is the base of the flagpole at (0, 32).
+    anchor: new google.maps.Point(0, 32)
+  };
+  // Shapes define the clickable region of the icon. The type defines an HTML
+  // <area> element 'poly' which traces out a polygon as a series of X,Y points.
+  // The final coordinate closes the poly by connecting to the first coordinate.
+  var shape = {
+    coords: [1, 1, 1, 20, 18, 20, 18, 1],
+    type: 'poly'
+  };
+  for (var i = 0; i < courts.length; i++) {
+    var court = courts[i];
+    var marker = new google.maps.Marker({
+      position: {lat: court[1], lng: court[2]},
+      map: map,
+      icon: image,
+      shape: shape,
+      title: court[0],
+      zIndex: court[3]
+    });
+  };
+};
