@@ -13,8 +13,8 @@ class SessionsController < ApplicationController
       # Send a cookie to user's browser
       session[:user_id] = @user.id
 
-      flash.now[:alert] = 'Play time!'
-      redirect_to '/'
+      flash[:notice] = 'Play time!'
+      redirect_to '/index'
     else
       flash.now[:alert] = 'Login failed - swing again!'
       render :new
