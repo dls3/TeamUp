@@ -61,6 +61,7 @@ function createMarkers(map) {
     var court = courts[i];
     var marker = new google.maps.Marker({
       position: {lat: court[1], lng: court[2]},
+      animation: google.maps.Animation.DROP,
       map: map,
       icon: image,
       shape: shape,
