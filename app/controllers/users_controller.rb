@@ -19,8 +19,6 @@ class UsersController < ApplicationController
       format.html { redirect_to(@user, notice: 'User was successfully created.') }
       format.json { render json: @user, status: :created, location: @user }
 
-
-      flash[:notice] = 'Welcome!'
       redirect_to '/'
     else
       flash.now[:error] = 'You missed, try again!'

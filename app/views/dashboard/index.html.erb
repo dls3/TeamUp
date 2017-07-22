@@ -5,3 +5,32 @@
 
 <div id="map">
 </div>
+
+
+<!-- LOGIN FORM (HIDDEN) BEING USED WITH JAVASCRIPT! -->
+<div class="loginform_container">
+
+  <div class = "loginform">
+
+  <h1>Log In</h1>
+
+  <%= form_for :session, url: sessions_path do |f| %>
+
+    <div class='field'>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
+
+    <div class='field'>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+
+    <%= f.submit 'Login' %>
+
+  <% end %>
+
+  <button id="exit-form">x</button>
+
+  </div>
+</div>
