@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20170721194630) do
     t.integer "current_players"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
   end
 
   create_table "rsvps", force: :cascade do |t|
