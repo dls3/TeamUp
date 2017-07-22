@@ -13,12 +13,12 @@ function initMap() {
 }
 
   var courts = [
-    ['Beaches Park', 43.66616962,-79.29970757, 4],
-    ["Hanlan's Point Park", 43.61994414, -79.39161271, 5],
-    ['Malvern Park', 43.80901631, -79.21793821, 3],
-    ['Oriole Park', 43.6969922, -79.39928015, 2],
-    ['Rosedale Park', 43.68304016, -79.380109, 1],
-    ['Shawnee Park', 43.79754498, -79.33870752, 6]
+    ['Beaches Park Tennis Court', 43.66616962,-79.29970757, 4],
+    ["Hanlan's Point Park Tennis Court", 43.61994414, -79.39161271, 5],
+    ['Malvern Park Tennis Court', 43.80901631, -79.21793821, 3],
+    ['Oriole Park Tennis Court', 43.6969922, -79.39928015, 2],
+    ['Rosedale Park Tennis Court', 43.68304016, -79.380109, 1],
+    ['Shawnee Park Tennis Court', 43.79754498, -79.33870752, 6]
   ];
 
   // service = new google.maps.places.PlacesService(map);
@@ -38,7 +38,7 @@ function createMarkers(map) {
   var contentString = '<div id="content">'+
   '<div id="siteNotice">'+
   '</div>'+
-  '<h1 id="firstHeading" class="firstHeading">Join this game!</h1>'+
+  '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
   '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match' +
   '</div>'+
   '</div>';
