@@ -25,11 +25,12 @@ end
 
   def create
     @game = Game.new(game_params)
-    @game.user_id = session[:user_id]
-    # @game.user_id = current_user.id
+    # @game.user_id = session[:user_id]
+    @game.user_id = current_user.id
 
     if @game.save
-      redirect_to game_path(params[:game_id])
+      # redirect_to game_path(params[:game_id])
+      redirect_to game_url(@game)
     else
       render :new
     end
@@ -37,15 +38,24 @@ end
 
   def edit
     @game = Game.find(params[:id])
+
+    if current_user.id == @game.user_id
+      render :edit_event 
+    else
+      flash[:alert] = 'Please login in order to edit this game'
+      redirect_to root_path
+    end
   end
+
 
   def update
     @game = Game.find(params[:id])
-    if @game.update(game_params)
+    if @game.update_attributes(game_params)
       flash[:notice] = "Game Updated!"
-      redirect_to @game
+      redirect_to game_url(@game)
     else
-      redirect_back_or_to @game
+      # redirect_back_or_to @game
+      render :edit_event
     end
   end
 
@@ -55,6 +65,7 @@ end
     flash[:alert] = "Game removed"
     redirect_to root_url
   end
+
 
 end
 

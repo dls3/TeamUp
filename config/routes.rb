@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :users
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destory]
-  resources :games
+  resources :games, only: [:new, :create, :show, :edit, :update]
   resources :dashboard
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
