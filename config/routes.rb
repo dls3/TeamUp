@@ -13,7 +13,6 @@ Rails.application.routes.draw do
 
   get '/users/profile' => 'users#profile'
 
-  get '/about' =>  'dashboard#about'
   get '/search' => 'dashboard#search'
   get '/users/profile' => 'users#profile'
 

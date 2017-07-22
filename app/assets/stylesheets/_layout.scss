@@ -1,17 +1,37 @@
-html {
-  width: 100%;
+
+#logo {
+  font-family: 'Allerta Stencil', sans-serif;
+  font-weight: bold;
+  font-size: 80px;
+  color:black;
+  text-shadow: 2px 2px #57bc90;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
 }
 
 .navbar {
   text-decoration: none;
   text-align: center;
   line-height: 20px;
+  top: 60px;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 .site-nav {
   text-decoration: none;
   text-align: center;
   line-height: 20px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 ul {
@@ -21,12 +41,6 @@ ul {
 
 a:link {
   text-decoration: none;
-}
-
-.footer {
-  margin: auto;
-  display: block;
-  color: black;
 }
 
 a:visited {
