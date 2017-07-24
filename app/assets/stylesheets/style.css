@@ -1,3 +1,4 @@
+
 #logo {
   top: 0;
   text-align: center;
@@ -47,7 +48,7 @@
 }
 
 #map {
-  position: absolute;
+  position: fixed;
   clear: both;
   width: 1000px;
   height: 500px;
