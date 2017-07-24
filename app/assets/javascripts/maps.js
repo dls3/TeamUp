@@ -7,9 +7,7 @@ function initMap() {
     zoom: 11
   });
 
-  // var infoWindow = new google.maps.InfoWindow;
-
-  createMarkers(map);
+  // createMarkers(map);
 
   // $.ajax({
   //       url: 'http://localhost:3000/courts',
@@ -28,18 +26,17 @@ function initMap() {
   //       content: content
   //     });
 
-};
+  var courts = [
+    ['Shawnee Park Tennis Court', 43.79754498, -79.33870752, 6],
+    ["Hanlan's Point Park Tennis Court", 43.61994414, -79.39161271, 5],
+    ['Beaches Park Tennis Court', 43.66616962,-79.29970757, 4],
+    ['Malvern Park Tennis Court', 43.80901631, -79.21793821, 3],
+    ['Oriole Park Tennis Court', 43.6969922, -79.39928015, 2],
+    ['Rosedale Park Tennis Court', 43.68304016, -79.380109, 1]
+  ];
 
-var courts = [
-  ['Beaches Park Tennis Court', 43.66616962,-79.29970757, 4],
-  ["Hanlan's Point Park Tennis Court", 43.61994414, -79.39161271, 5],
-  ['Malvern Park Tennis Court', 43.80901631, -79.21793821, 3],
-  ['Oriole Park Tennis Court', 43.6969922, -79.39928015, 2],
-  ['Rosedale Park Tennis Court', 43.68304016, -79.380109, 1],
-  ['Shawnee Park Tennis Court', 43.79754498, -79.33870752, 6]
-];
 
-function createMarkers(map) {
+// function createMarkers(map) {
   // Adds markers to the map.
 
   // Marker sizes are expressed as a Size of X,Y where the origin of the image
@@ -48,17 +45,10 @@ function createMarkers(map) {
   // Origins, anchor positions and coordinates of the marker increase in the X
   // direction to the right and in the Y direction down.
 
-  var contentString = '<div id="content">'+
-  '<div id="siteNotice">'+
-  '</div>'+
-  '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-  '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match' +
-  '</div>'+
-  '</div>';
+  // var infowindow = new google.maps.InfoWindow({
+  //   content: contentString
+  // });
 
-  var infowindow = new google.maps.InfoWindow({
-    content: contentString
-  });
 
   // Rails.root.join("assets", "lib", "tennis-15.svg")
   var image = {
@@ -90,8 +80,24 @@ function createMarkers(map) {
       title: court[0],
       zIndex: court[3]
     });
-    marker.addListener('click', function() {
-      infowindow.open(map, marker);
-    });
-  };
+    var contentString = '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
+    '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match' +
+    '</div>'+
+    '</div>';
+    AddInfowWindow(marker, contentString);
+  }
+}
+
+
+
+function AddInfowWindow(marker, contentString) {
+  var infoWindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  marker.addListener('click', function() {
+    infoWindow.open(marker.get('map'), marker);
+  });
 };
