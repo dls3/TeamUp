@@ -41,5 +41,5 @@ tennis_game = Game.create!(
   players_needed: 2,
   current_players: 1,
   description: "Looking for a partner to play tennis with!",
-  user: masha 
+  user: masha
 )
