@@ -1,6 +1,6 @@
 <h1> Search for a game </h1>
 
-<div>
+<!-- <div>
   <%= form_tag("/search", method: :get) do %>
    <%= label_tag(:games, "Sport:") %>
    <%= text_area_tag(:game, params[:game]) %></br>
@@ -8,12 +8,20 @@
   <%= text_area_tag(:neighborhood) %></br><br>
    <%= submit_tag("Search") %>
   <% end %>
-</div>
+</div> -->
 
 
 
-<% if @games.present? %>
+<%= form_tag(search_results_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :sport, params[:sport], placeholder: "Search Sports" %> <br>
+    <%= text_field_tag :neighbourhood, params[:neighbourhood], placeholder: "Search Neighbourhoods" %> <br>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+
+
+<!-- <% if @games.present? %>
   <%= render @games %>
 <%else%>
   <p> There are no games that match your search </p>
-<%end%>
+<%end%> -->

@@ -9,10 +9,10 @@ class UsersController < ApplicationController
   end
 
   def showr
-    @user = User.find(session[:user_id])
-    @games = @user.games
-    render :own_games
-  end
+      @user = User.find(session[:user_id])
+      @games = @user.games
+      render :own_games
+    end
 
   def create
     @user = User.new(user_params)
