@@ -2,7 +2,7 @@
   <%= form_for @game do |f| %>
     <% if @game.errors.any? %>
       <div id = "error_explanation">
-        <h3> There are <%= @game.errors.count %> issues, please true again:</h3>
+        <h3> There are <%= @game.errors.count %> issues, please try again:</h3>
         <ol>
           <% @game.errors.full_messages.each do |msg| %>
             <li><%= msg %> </li>
@@ -14,44 +14,38 @@
 
 <%= form_for @game do |f| %>
 
-<div class="field">
-  <%= f.label :sport %><br>
-  <%= f.text_field :sport %>
+<div class='field'>
+  <%=f.label :sport %> <br>
+<%= f.select(:sport, ["Baseball", "Basketball", "Hockey", "Soccer", "Tennis" ]) %>
 </div>
 
 <div class='field'>
-  <%= f.label :event_name %><br>
+  <%= f.label :event_name, "Event Name" %><br>
   <%= f.text_field :event_name %>
 </div>
 
+
 <div class='field'>
-  <%= f.label :date %><br>
-  <%= f.text_field :date %>
+  <%= f.label :datetime, "Date & Time" %><br>
+  <%= f.date_select :date, { start_year: Date.today.year, end_year: 2020, default: Date.today } %>
+  <%= f.time_select :time %>
 </div>
 
 <div class='field'>
-  <%= f.label :time %><br>
-  <%= f.text_field :time %>
+  <%=f.label :skill, "Skill Level" %><br>
+  <%= f.select(:skill, ["Beginner", "Intermediate", "Pro" ]) %>
 </div>
-
-<div class='field'>
-  <%=f.label :skill %> <br>
-<%= f.select(:skill, ["Beginner", "Intermediate", "Pro" ]) %>
-</div>
-
-
-
 
 <!-- %= f.select(:type, ["original","print","other"]) %> -->
 
 <div class='field'>
-  <%= f.label :players_needed %><br>
-  <%= f.text_field :players_needed %>
+  <%= f.label :current_players, "Current Players" %><br>
+  <%= f.select(:current_players, (1..50).to_a) %>
 </div>
 
 <div class='field'>
-  <%= f.label :current_players %><br>
-  <%= f.text_field :current_players %>
+  <%= f.label :players_needed, "Players Needed" %><br>
+  <%= f.select(:players_needed, (1..50).to_a) %>
 </div>
 
 <div class='field'>
@@ -60,6 +54,6 @@
 </div>
 
 
-<%= f.submit 'Start Game' %>
+<%= f.submit 'Create Game' %>
 
 <% end %>
