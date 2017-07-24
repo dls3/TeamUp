@@ -35,13 +35,14 @@
 </div>
 
 <div class='field'>
-  <%= f.label :skill %><br>
-  <select name="skill">
-    <option value="beginner">Beginner</option>
-    <option value="intermediate">Intermediate</option>
-    <option value="pro">Pro</option>
-  </select>
+  <%=f.label :skill %> <br>
+<%= f.select(:skill, ["Beginner", "Intermediate", "Pro" ]) %>
 </div>
+
+
+
+
+<!-- %= f.select(:type, ["original","print","other"]) %> -->
 
 <div class='field'>
   <%= f.label :players_needed %><br>
