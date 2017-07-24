@@ -7,8 +7,8 @@ class CourtFieldsController < ApplicationController
   def populate
     respond_to do |format|
       format.json do
-      @courts = CourtFields.all
-      render json: @courts, include: :name, :address, :neighbourhood, :lat, :long
+        @courts = CourtFields.all
+        render json: @courts, include: :name, :address, :neighbourhood, :lat, :long
       end
     end
   end
