@@ -1,6 +1,7 @@
 class Game < ApplicationRecord
 
-  belongs_to :user
+  belongs_to :owner, :class_name => 'User', optional: true
+
 
   validates :players_needed, presence: true, numericality: true
   validates :current_players, presence: true, numericality: true

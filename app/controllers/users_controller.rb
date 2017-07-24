@@ -8,6 +8,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
+  def showr
+    @user = User.find(session[:user_id])
+    @games = @user.games
+    render :own_games
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -21,13 +27,19 @@ class UsersController < ApplicationController
       # format.html { redirect_to(@user, notice: 'User was successfully created.') }
       # format.json { render json: @user, status: :created, location: @user }
       flash[:notice] = 'Welcome!'
-
       redirect_to '/'
     else
       flash.now[:error] = 'You missed, try again!'
       render 'new'
     end
   end
+
+  def edit
+  unless @user
+    flash[:error] = "Must be logged in"
+    redirect_to root_url and return
+  end
+end
 
   def profile
     @user = current_user

@@ -40,7 +40,7 @@ end
     @game = Game.find(params[:id])
 
     if current_user.id == @game.user_id
-      render :edit_event 
+      render :edit_event
     else
       flash[:alert] = 'Please login in order to edit this game'
       redirect_to root_path
@@ -71,5 +71,5 @@ end
 
   private
   def game_params
-    params.require(:game).permit(:date, :time, :sport, :event_name, :players_needed, :current_players)
+    params.require(:game).permit(:date, :time, :skill, :sport, :event_name, :players_needed, :current_players)
   end
