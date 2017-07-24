@@ -7,8 +7,6 @@ function initMap() {
     zoom: 11
   });
 
-  // createMarkers(map);
-
   // $.ajax({
   //       url: 'http://localhost:3000/courts',
   //       method: 'GET',
@@ -18,13 +16,9 @@ function initMap() {
   //       '<div id="siteNotice">'+
   //       '</div>'+
   //       '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-  //       '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match' +
+  //       '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match at ' + court[0] +
   //       '</div>'+
   //       '</div>';
-  //
-  //     var infoWindow = new google.maps.InfoWindow({
-  //       content: content
-  //     });
 
   var courts = [
     ['Shawnee Park Tennis Court', 43.79754498, -79.33870752, 6],
@@ -34,21 +28,6 @@ function initMap() {
     ['Oriole Park Tennis Court', 43.6969922, -79.39928015, 2],
     ['Rosedale Park Tennis Court', 43.68304016, -79.380109, 1]
   ];
-
-
-// function createMarkers(map) {
-  // Adds markers to the map.
-
-  // Marker sizes are expressed as a Size of X,Y where the origin of the image
-  // (0,0) is located in the top left of the image.
-
-  // Origins, anchor positions and coordinates of the marker increase in the X
-  // direction to the right and in the Y direction down.
-
-  // var infowindow = new google.maps.InfoWindow({
-  //   content: contentString
-  // });
-
 
   // Rails.root.join("assets", "lib", "tennis-15.svg")
   var image = {
@@ -80,13 +59,9 @@ function initMap() {
       title: court[0],
       zIndex: court[3]
     });
-    var contentString = '<div id="content">'+
-    '<div id="siteNotice">'+
-    '</div>'+
-    '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-    '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match at ' + court[0] +
-    '</div>'+
-    '</div>';
+    var contentString = '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
+    '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match at ' + court[0] + '</p></div>';
+
     AddInfowWindow(marker, contentString);
   }
 }
