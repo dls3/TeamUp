@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20170724165920) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.datetime "date"
-    t.datetime "time"
+    t.string "date"
+    t.string "time"
     t.integer "user_id"
     t.integer "field_id"
     t.string "skill"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20170724165920) do
 
   create_table "rsvps", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "games_id"
+    t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
