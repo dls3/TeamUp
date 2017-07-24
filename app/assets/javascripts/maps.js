@@ -10,21 +10,16 @@ function initMap() {
   });
 
   createMarkers(map);
-}
+};
 
-  var courts = [
-    ['Beaches Park Tennis Court', 43.66616962,-79.29970757, 4],
-    ["Hanlan's Point Park Tennis Court", 43.61994414, -79.39161271, 5],
-    ['Malvern Park Tennis Court', 43.80901631, -79.21793821, 3],
-    ['Oriole Park Tennis Court', 43.6969922, -79.39928015, 2],
-    ['Rosedale Park Tennis Court', 43.68304016, -79.380109, 1],
-    ['Shawnee Park Tennis Court', 43.79754498, -79.33870752, 6]
-  ];
-
-  // service = new google.maps.places.PlacesService(map);
-  // service.nearbySearch(request, callback);
-// };
-
+var courts = [
+  ['Beaches Park Tennis Court', 43.66616962,-79.29970757, 4],
+  ["Hanlan's Point Park Tennis Court", 43.61994414, -79.39161271, 5],
+  ['Malvern Park Tennis Court', 43.80901631, -79.21793821, 3],
+  ['Oriole Park Tennis Court', 43.6969922, -79.39928015, 2],
+  ['Rosedale Park Tennis Court', 43.68304016, -79.380109, 1],
+  ['Shawnee Park Tennis Court', 43.79754498, -79.33870752, 6]
+];
 
 function createMarkers(map) {
   // Adds markers to the map.
