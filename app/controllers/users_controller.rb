@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
-  def showr
+  def show
     @user = User.find(session[:user_id])
     @games = @user.games
     render :own_games

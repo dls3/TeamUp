@@ -18,10 +18,11 @@
 
   <body>
 
+  <div class = "top_of_page">
 
     <h1 id='logo'> Team Up </h1>
     <nav class = 'navbar'>
-        <a href = '/index'> HOME |</a>
+        <a href = '/index'> HOME &ensp;  </a>
         <% if current_user %>
         <a href = '/users/profile'> PROFILE |</a>
         <a href = '/games/new'> START A GAME |</a>
@@ -30,24 +31,28 @@
         <a href = '/about'> ABOUT US </a>
     </nav>
 
+  <div class = "navnav">
     <nav class="site-nav">
-      <ul>
         <% if current_user %>
-        <li><%= link_to "LOGOUT", logout_path(id:current_user), method: :destroy %></li>
+        <%= link_to "LOGOUT" , logout_path(id:current_user), method: :destroy%>
         <% elsif %>
-        <li><span id = "loginbutton"><%= link_to "LOGIN", remote: true %></span></li>
-        <li><%= link_to "REGISTER", new_user_path %></li>
+        <span id = "loginbutton"><%= link_to "LOGIN", remote: true %></span>
+        <%= link_to "REGISTER", new_user_path %>
       <% end %>
+  </div>
       <!-- YOU ARE NOW LOGGED IN AS -->
       <div class = "welcome">
         <% if current_user %>
           <%= "You are currently logged in as: #{current_user.email}" %>
         <% end %>
       </div>
-      </ul>
     </nav>
 
 
+<<<<<<< HEAD
+=======
+  </div>
+>>>>>>> 5a2bb3dc421910656cc105c867fcee00f59a5cbe
 
     <!-- LOGIN FORM (HIDDEN) BEING USED WITH JAVASCRIPT! -->
     <div class="loginform_container">
@@ -71,7 +76,11 @@
         </div>
         <br>
         <br>
+<<<<<<< HEAD
         <%= f.submit 'Login' %>
+=======
+        <%= f.submit 'Play Ball' %>
+>>>>>>> 5a2bb3dc421910656cc105c867fcee00f59a5cbe
 
       <% end %>
 

@@ -1,10 +1,15 @@
+body{
+  background-color: #d0d6de;
+}
 #logo {
   top: 0;
   text-align: center;
   margin: auto;
+  color: white;
 }
 
 .loginform_container {
+  z-index: 15;
   display: none;
   height: 100%;
   width: 100%;
@@ -12,6 +17,8 @@
   position: fixed;
 }
 .loginform {
+  font-family: 'Allerta Stencil';
+   z-index: 15;
     display: block;
     width: 300px;
     height: 15em;
@@ -47,21 +54,31 @@
 }
 
 #map {
-  position: absolute;
+  z-index: 10;
+  position: fixed;
   clear: both;
-  width: 1000px;
+  width: 800px;
   height: 500px;
   margin: auto;
-  top: 0;
+  top: 70px;
   bottom: 0;
   right: 0;
   left: 0;
 }
 
+.index_container {
+  background-image: url("grass.jpg");
+  background-position: center;
+  margin: auto;
+  width: 1700px;
+  height: 900px;
+  position: fixed;
+
+}
 
 
 #footer {
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 0;
     left: 0;

@@ -19,6 +19,8 @@ csv.each do |row|  # headers become keys
     court.name = row['NAME']
     court.address = row['ADDRESS']
     court.neighbourhood = row['DISTRICT']
+    court.lat = row['Lat']
+    court.long = row['Long']
     court.save
     puts "#{court.name} was saved"
   end
@@ -41,5 +43,5 @@ tennis_game = Game.create!(
   players_needed: 2,
   current_players: 1,
   description: "Looking for a partner to play tennis with!",
-  user: masha 
+  user: masha
 )

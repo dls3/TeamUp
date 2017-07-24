@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get '/new_user' => 'users#new'
   post '/users' => 'users#create'
 
+  get '/courts' => 'court_fields#populate'
+
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :sessions, only: [:new, :create, :destory]
   resources :games, only: [:new, :create, :show, :edit, :update]

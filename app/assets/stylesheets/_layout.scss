@@ -9,6 +9,7 @@
   bottom: 0;
   right: 0;
   left: 0;
+  padding-bottom: 20px;
 }
 
 .navbar {
@@ -26,7 +27,7 @@
 .site-nav {
   text-decoration: none;
   text-align: center;
-  line-height: 20px;
+  line-height: 50px;
   display: inline;
   margin: auto;
   top: 0;
@@ -39,6 +40,15 @@ ul {
   list-style-type: none;
 }
 
+.welcome {
+  text-align: center;
+  margin: auto;
+}
+.navnav {
+  text-align: center;
+  margin: auto;
+  word-spacing: 10px;
+}
 
 a:link {
   text-decoration: none;
@@ -47,4 +57,8 @@ a:link {
 a:visited {
   text-decoration: none;
   color: black;
+}
+
+a:hover{
+  color: white;
 }
