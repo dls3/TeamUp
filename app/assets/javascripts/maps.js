@@ -84,14 +84,12 @@ function initMap() {
     '<div id="siteNotice">'+
     '</div>'+
     '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-    '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match' +
+    '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match at ' + court[0] +
     '</div>'+
     '</div>';
     AddInfowWindow(marker, contentString);
   }
 }
-
-
 
 function AddInfowWindow(marker, contentString) {
   var infoWindow = new google.maps.InfoWindow({
