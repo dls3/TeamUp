@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-
+  attr_accessor :date, :time, :players_needed, :current_players, :description, :skill
   # before_action :require_login, only: [:new, :create]
 
   def index
@@ -26,6 +26,11 @@ end
     @user = User.find_by id: params["user_id"]
   end
 
+
+  def game_params
+    params.required(:game).permit(:date, :time, :sport, :current_players, :players_needed, :event_name, :skill, :description)
+  end
+
   def create
     @game = Game.new(game_params)
     # @game.user_id = session[:user_id]
@@ -38,6 +43,7 @@ end
       render :new
     end
   end
+
 
   def edit
     @game = Game.find(params[:id])

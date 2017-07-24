@@ -18,35 +18,71 @@
 
   <body>
 
+  <div class = "top_of_page">
 
     <h1 id='logo'> Team Up </h1>
 
     <nav class = 'navbar'>
-        <a href = '/index'> HOME |</a>
+        <a href = '/index'> HOME &ensp;  </a>
         <% if current_user %>
-        <a href = '/users/profile'> PROFILE |</a>
+        <a href = '/users/profile'> PROFILE &ensp; </a>
+        <a href = '/games/new'> START A GAME &ensp; </a>
         <% end %>
-        <a href = '/games/new'> START A GAME |</a>
-        <a href = '/search'> FIND A GAME |</a>
+        <a href = '/search'> FIND A GAME &ensp; </a>
         <a href = '/about'> ABOUT US </a>
     </nav>
 
+  <div class = "navnav">
     <nav class="site-nav">
-      <ul>
         <% if current_user %>
-        <li><%= link_to "LOGOUT", logout_path(id:current_user), method: :destroy %></li>
+        <%= link_to "LOGOUT" , logout_path(id:current_user), method: :destroy%>
         <% elsif %>
-        <li><span id = "loginbutton"><%= link_to "LOGIN", remote: true %></span></li>
-        <li><%= link_to "REGISTER", new_user_path %></li>
+        <span id = "loginbutton"><%= link_to "LOGIN", remote: true %></span>
+        <%= link_to "REGISTER", new_user_path %>
       <% end %>
+  </div>
       <!-- YOU ARE NOW LOGGED IN AS -->
       <div class = "welcome">
         <% if current_user %>
           <%= "You are currently logged in as: #{current_user.email}" %>
         <% end %>
       </div>
-      </ul>
     </nav>
+
+
+  </div>
+
+    <!-- LOGIN FORM (HIDDEN) BEING USED WITH JAVASCRIPT! -->
+    <div class="loginform_container">
+
+      <div class = "loginform">
+
+      <h1 id="logintext">Log In</h1>
+
+      <%= form_for :session, url: sessions_path do |f| %>
+
+        <div class='field'>
+          <%= f.label :email %>
+          <br>
+          <%= f.email_field :email%>
+        </div>
+        <br>
+        <div class='field'>
+          <%= f.label :password %>
+          <br>
+          <%= f.password_field :password %>
+        </div>
+        <br>
+        <br>
+        <%= f.submit 'Play Ball' %>
+
+      <% end %>
+
+      <button id="exit-form">x</button>
+
+      </div>
+    </div>
+
 
 
   <main>
