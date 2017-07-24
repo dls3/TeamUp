@@ -1,47 +1,35 @@
 function initMap() {
   console.log('inside init map');
-  console.log( document.getElementById('map'));
 
   var toronto = new google.maps.LatLng(43.642,-79.387);
-
   var map = new google.maps.Map(document.getElementById('map'), {
     center: toronto,
     zoom: 11
   });
 
-  createMarkers(map);
-};
+  // $.ajax({
+  //       url: 'http://localhost:3000/courts',
+  //       method: 'GET',
+  //       dataType: 'json',
+  //     }).done(function(results) {
+  //       var contentString = '<div id="content">'+
+  //       '<div id="siteNotice">'+
+  //       '</div>'+
+  //       '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
+  //       '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match at ' + court[0] +
+  //       '</div>'+
+  //       '</div>';
 
-var courts = [
-  ['Beaches Park Tennis Court', 43.66616962,-79.29970757, 4],
-  ["Hanlan's Point Park Tennis Court", 43.61994414, -79.39161271, 5],
-  ['Malvern Park Tennis Court', 43.80901631, -79.21793821, 3],
-  ['Oriole Park Tennis Court', 43.6969922, -79.39928015, 2],
-  ['Rosedale Park Tennis Court', 43.68304016, -79.380109, 1],
-  ['Shawnee Park Tennis Court', 43.79754498, -79.33870752, 6]
-];
+  var courts = [
+    ['Shawnee Park Tennis Court', 43.79754498, -79.33870752, 6],
+    ["Hanlan's Point Park Tennis Court", 43.61994414, -79.39161271, 5],
+    ['Beaches Park Tennis Court', 43.66616962,-79.29970757, 4],
+    ['Malvern Park Tennis Court', 43.80901631, -79.21793821, 3],
+    ['Oriole Park Tennis Court', 43.6969922, -79.39928015, 2],
+    ['Rosedale Park Tennis Court', 43.68304016, -79.380109, 1]
+  ];
 
-function createMarkers(map) {
-  // Adds markers to the map.
-
-  // Marker sizes are expressed as a Size of X,Y where the origin of the image
-  // (0,0) is located in the top left of the image.
-
-  // Origins, anchor positions and coordinates of the marker increase in the X
-  // direction to the right and in the Y direction down.
-
-  var contentString = '<div id="content">'+
-  '<div id="siteNotice">'+
-  '</div>'+
-  '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-  '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match' +
-  '</div>'+
-  '</div>';
-
-  var infowindow = new google.maps.InfoWindow({
-    content: contentString
-  });
-
+  // Rails.root.join("assets", "lib", "tennis-15.svg")
   var image = {
     url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
     // This marker is 20 pixels wide by 32 pixels high.
@@ -58,8 +46,10 @@ function createMarkers(map) {
     coords: [1, 1, 1, 20, 18, 20, 18, 1],
     type: 'poly'
   };
+
   for (var i = 0; i < courts.length; i++) {
     var court = courts[i];
+
     var marker = new google.maps.Marker({
       position: {lat: court[1], lng: court[2]},
       animation: google.maps.Animation.DROP,
@@ -69,8 +59,18 @@ function createMarkers(map) {
       title: court[0],
       zIndex: court[3]
     });
-    marker.addListener('click', function() {
-      infowindow.open(map, marker);
-    });
-  };
+    var contentString = '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
+    '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match at <br>' + court[0] + '</p></div>';
+
+    AddInfowWindow(marker, contentString);
+  }
+}
+
+function AddInfowWindow(marker, contentString) {
+  var infoWindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  marker.addListener('click', function() {
+    infoWindow.open(marker.get('map'), marker);
+  });
 };
