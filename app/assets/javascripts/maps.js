@@ -60,6 +60,7 @@ function createMarkers(map) {
     content: contentString
   });
 
+  // Rails.root.join("assets", "lib", "tennis-15.svg")
   var image = {
     url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
     // This marker is 20 pixels wide by 32 pixels high.
