@@ -33,7 +33,7 @@ gem 'figaro'
 
 gem 'mail'
 
-gem 'formtastic', :git => 'git://github.com/justinfrench/formtastic.git'
+# gem 'formtastic', :git => 'git://github.com/justinfrench/formtastic.git'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
