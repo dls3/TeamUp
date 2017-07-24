@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy', :as => :logout
   get '/games/new' => 'games#new'
   get '/dashboard/' => 'dashboard#index'
+  get '/about' => 'dashboard#about'
 
   get '/users/profile' => 'users#profile'
 

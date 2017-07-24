@@ -1,7 +1,7 @@
 <h1> Search for a game </h1>
 
 <div>
-  <%= form_tag("/search", method: "get") do %>
+  <%= form_tag("/search", method: :get) do %>
    <%= label_tag(:games, "Sport:") %>
    <%= text_area_tag(:game) %></br>
    <%= label_tag(:neighborhood, "Neighbourhood:") %>
