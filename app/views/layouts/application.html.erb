@@ -18,16 +18,17 @@
 
   <body>
 
+  <div class = "top_of_page">
 
     <h1 id='logo'> Team Up </h1>
 
     <nav class = 'navbar'>
-        <a href = '/index'> HOME |</a>
+        <a href = '/index'> HOME &ensp;  </a>
         <% if current_user %>
-        <a href = '/users/profile'> PROFILE |</a>
-        <a href = '/games/new'> START A GAME |</a>
+        <a href = '/users/profile'> PROFILE &ensp; </a>
+        <a href = '/games/new'> START A GAME &ensp; </a>
         <% end %>
-        <a href = '/search'> FIND A GAME |</a>
+        <a href = '/search'> FIND A GAME &ensp; </a>
         <a href = '/about'> ABOUT US </a>
     </nav>
 
@@ -48,7 +49,7 @@
       </ul>
     </nav>
 
-
+  </div>
 
     <!-- LOGIN FORM (HIDDEN) BEING USED WITH JAVASCRIPT! -->
     <div class="loginform_container">
@@ -72,7 +73,7 @@
         </div>
         <br>
         <br>
-        <%= f.submit 'Login' %>
+        <%= f.submit 'Play Ball' %>
 
       <% end %>
 
