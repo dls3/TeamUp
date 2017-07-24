@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  attr_accessor :date, :time, :players_needed, :current_players, :datetime, :skill
+  attr_accessor :date, :time, :players_needed, :current_players, :description, :skill
   # before_action :require_login, only: [:new, :create]
 
   def index
@@ -25,7 +25,7 @@ end
 
 
   def game_params
-    params.required(:game).permit(:date, :time, :sport, :current_players, :players_needed, :event_name)
+    params.required(:game).permit(:date, :time, :sport, :current_players, :players_needed, :event_name, :skill, :description)
   end
 
   def create

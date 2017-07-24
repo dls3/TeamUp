@@ -27,7 +27,8 @@
 
 <div class='field'>
   <%= f.label :datetime, "Date & Time" %><br>
-  <%= f.datetime_select :date, { start_year: Date.today.year, end_year: 2020, default: Date.today } %>
+  <%= f.date_select :date, { start_year: Date.today.year, end_year: 2020, default: Date.today } %>
+  <%= f.time_select :time %>
 </div>
 
 <div class='field'>
