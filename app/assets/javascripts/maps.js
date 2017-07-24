@@ -82,6 +82,6 @@ function AddInfowWindow(marker, contentString) {
     else {
         infoWindow.close();
         marker.open = false;
-    }
+    };
   });
 };
