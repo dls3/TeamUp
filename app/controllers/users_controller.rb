@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
-  def showr
+  def show
     @user = User.find(session[:user_id])
     @games = @user.games
     render :own_games
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user
+      session[:user_id] = @user.id
 
       mailer = UserMailer.new
       # Tell the UserMailer to send a welcome email after save
