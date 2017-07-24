@@ -1,0 +1,15 @@
+
+<%= link_to 'Back', users_profile_path %>
+
+    <div class="games">
+      <% @games.each do |game| %>
+        <h2><%= game.event_name %> </h2>
+        <p>Sport: <%= game.sport %></p>
+        <p>Players Needed: <%= game.players_needed %> </p>
+        <p>Currently Have: <%= game.current_players %> </p>
+        <p>Skill: <%= game.skill %> </p>
+        <p> Date: <%= game.date %> </p>
+        <p>Time: <%= game.time %> </p>
+
+      <% end %>
+    </div>

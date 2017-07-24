@@ -2,12 +2,15 @@ Rails.application.routes.draw do
 
   root 'dashboard#index'
 
+  get '/users/own_games' => 'users#showr'
+
   get '/index' => 'dashboard#index'
   get '/sessions' => 'sessions#new', :as => :login
   get '/sessions' => 'sessions#create'
   post '/logout' => 'sessions#destroy', :as => :logout
   get '/games/new' => 'games#new'
   get '/dashboard/' => 'dashboard#index'
+  get '/about' => 'dashboard#about'
 
   get '/users/profile' => 'users#profile'
 
@@ -19,10 +22,9 @@ Rails.application.routes.draw do
 
   get '/courts' => 'court_fields#populate'
 
-  resources :users
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show, :edit, :update]
   resources :sessions, only: [:new, :create, :destory]
-  resources :games
+  resources :games, only: [:new, :create, :show, :edit, :update]
   resources :dashboard
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

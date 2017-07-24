@@ -19,14 +19,14 @@
   <body>
 
 
-      <a href = '/index' id='logo'> Team Up </a>
+    <h1 id='logo'> Team Up </h1>
 
     <nav class = 'navbar'>
         <a href = '/index'> HOME |</a>
         <% if current_user %>
         <a href = '/users/profile'> PROFILE |</a>
-        <% end %>
         <a href = '/games/new'> START A GAME |</a>
+        <% end %>
         <a href = '/search'> FIND A GAME |</a>
         <a href = '/about'> ABOUT US </a>
     </nav>

@@ -1,14 +1,16 @@
 <h1> Search for a game </h1>
 
 <div>
-  <%= form_tag("/search", method: "get") do %>
+  <%= form_tag("/search", method: :get) do %>
    <%= label_tag(:games, "Sport:") %>
-   <%= text_area_tag(:game) %></br>
+   <%= text_area_tag(:game, params[:game]) %></br>
    <%= label_tag(:neighborhood, "Neighbourhood:") %>
   <%= text_area_tag(:neighborhood) %></br><br>
    <%= submit_tag("Search") %>
   <% end %>
 </div>
+
+
 
 <% if @games.present? %>
   <%= render @games %>

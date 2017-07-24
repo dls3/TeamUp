@@ -8,23 +8,38 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
+  def show
+    @user = User.find(session[:user_id])
+    @games = @user.games
+    render :own_games
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user
+      session[:user_id] = @user.id
 
       mailer = UserMailer.new
       # Tell the UserMailer to send a welcome email after save
-      mailer.welcome_email(@user)
-      format.html { redirect_to(@user, notice: 'User was successfully created.') }
-      format.json { render json: @user, status: :created, location: @user }
 
+      # mailer.welcome_email(@user)
+      mailer.welcome_email(@user).deliver
+      # format.html { redirect_to(@user, notice: 'User was successfully created.') }
+      # format.json { render json: @user, status: :created, location: @user }
+      flash[:notice] = 'Welcome!'
       redirect_to '/'
     else
       flash.now[:error] = 'You missed, try again!'
       render 'new'
     end
   end
+
+  def edit
+  unless @user
+    flash[:error] = "Must be logged in"
+    redirect_to root_url and return
+  end
+end
 
   def profile
     @user = current_user
