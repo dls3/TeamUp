@@ -66,11 +66,22 @@ function initMap() {
   }
 }
 
+closeInfoWindow = function() {
+  infoWindow.close();
+};
+
 function AddInfowWindow(marker, contentString) {
   var infoWindow = new google.maps.InfoWindow({
     content: contentString
   });
-  marker.addListener('click', function() {
-    infoWindow.open(marker.get('map'), marker);
+  google.maps.event.addListener(marker, 'click', function() {
+    if (!marker.open) {
+        infoWindow.open(map,marker);
+        marker.open = true;
+    }
+    else {
+        infoWindow.close();
+        marker.open = false;
+    }
   });
 };
