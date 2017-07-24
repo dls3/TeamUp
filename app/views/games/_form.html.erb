@@ -24,12 +24,12 @@
   <%= f.text_field :event_name %>
 </div>
 
-<%= f.datetime_select :date %>
 
 <div class='field'>
-  <%= f.label :date %><br>
-  <%= f.text_field :date %>
+  <%= f.label :datetime, "Date & Time" %><br>
+  <%= f.datetime_select :date, :start_year => 2017 %>
 </div>
+
 
 <div class='field'>
   <%= f.label :time %><br>
