@@ -7,27 +7,33 @@ function initMap() {
     zoom: 11
   });
 
-  // $.ajax({
-  //       url: 'http://localhost:3000/courts',
-  //       method: 'GET',
-  //       dataType: 'json',
-  //     }).done(function(results) {
-  //       var contentString = '<div id="content">'+
-  //       '<div id="siteNotice">'+
-  //       '</div>'+
-  //       '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-  //       '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match at ' + court[0] +
-  //       '</div>'+
-  //       '</div>';
+  $.ajax({
+        url: 'http://localhost:3000/courts',
+        method: 'GET',
+        dataType: 'json',
+      }).done(function(results) {
+        var contentString = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
+        '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match at ' + results.name +
+        '</div>'+
+        '</div>';
+        console.log(contentString)
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+      });
+    });
 
-  var courts = [
-    ['Shawnee Park Tennis Court', 43.79754498, -79.33870752, 6],
-    ["Hanlan's Point Park Tennis Court", 43.61994414, -79.39161271, 5],
-    ['Beaches Park Tennis Court', 43.66616962,-79.29970757, 4],
-    ['Malvern Park Tennis Court', 43.80901631, -79.21793821, 3],
-    ['Oriole Park Tennis Court', 43.6969922, -79.39928015, 2],
-    ['Rosedale Park Tennis Court', 43.68304016, -79.380109, 1]
-  ];
+  // var courts = [
+  //   ['Shawnee Park Tennis Court', 43.79754498, -79.33870752, 6],
+  //   ["Hanlan's Point Park Tennis Court", 43.61994414, -79.39161271, 5],
+  //   ['Beaches Park Tennis Court', 43.66616962,-79.29970757, 4],
+  //   ['Malvern Park Tennis Court', 43.80901631, -79.21793821, 3],
+  //   ['Oriole Park Tennis Court', 43.6969922, -79.39928015, 2],
+  //   ['Rosedale Park Tennis Court', 43.68304016, -79.380109, 1]
+  // ];
 
   // Rails.root.join("assets", "lib", "tennis-15.svg")
   var image = {
