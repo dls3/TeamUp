@@ -1,57 +1,56 @@
-#logo {
-  font-family: 'Allerta Stencil', sans-serif;
-  font-weight: bold;
-  font-size: 60px;
-  color:black;
-  text-shadow: 2px 2px #57bc90;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  padding-bottom: 20px;
-}
+// #logo {
+//   font-family: 'Allerta Stencil', sans-serif;
+//   font-weight: bold;
+//   font-size: 60px;
+//   color:black;
+//   text-shadow: 2px 2px #57bc90;
+//   margin: auto;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   left: 0;
+//   padding-bottom: 20px;
+// }
 
 .navbar {
   text-decoration: none;
   background-color: #D4EFDF;
   text-align: center;
-  line-height: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin: auto;
-  top: 60px;
-  bottom: 0;
-  right: 0;
-  left: 0;
+
 }
 
-.site-nav {
+.user-nav {
   text-decoration: none;
   text-align: center;
   line-height: 50px;
   display: inline;
   margin: auto;
+  position: fixed;
   top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  width: 100%;
 }
 
-ul {
-  list-style-type: none;
+ul li {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: inline-block;
 }
+
+ul a {
+  text-align: center;
+  padding-left: 7px;
+  padding-right: 7px;
+  text-decoration: none;
+}
+
 
 .welcome {
   text-align: center;
   margin: auto;
-}
-.navnav {
-  text-align: center;
-  margin: auto;
-  word-spacing: 10px;
-}
-
-a:link {
-  text-decoration: none;
 }
 
 a:visited {
