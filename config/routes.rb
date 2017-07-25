@@ -11,10 +11,11 @@ Rails.application.routes.draw do
   get '/games/new' => 'games#new'
   get '/dashboard/' => 'dashboard#index'
   get '/about' => 'dashboard#about'
+  get '/search_results' => 'searches#search_results'
 
   get '/users/profile' => 'users#profile'
 
-  get '/search' => 'dashboard#search'
+  get '/search' => 'searches#search'
   get '/users/profile' => 'users#profile'
 
   get '/new_user' => 'users#new'
