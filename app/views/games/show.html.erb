@@ -11,10 +11,15 @@
 
 <% if current_user %>
 
+<%= link_to "JOIN", users_profile_path%>
+
+<% if current_user.id == @game.user_id%>
+
 <%= link_to "Edit Game", edit_game_path(@game) %>
 
 <% else %>
   <%= link_to "Sign Up", new_user_path %>
+<% end %>
 <% end %>
 
 </div>
