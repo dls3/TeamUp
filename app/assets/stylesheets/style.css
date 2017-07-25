@@ -66,6 +66,15 @@ body{
   left: 0;
 }
 
+.index_container {
+  background-image: url("newoutdoor.jpg");
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-position: center;
+  position: absolute;
+}
+
 /*.index_container {
   background-image: url("grass.jpg");
   background-position: center;
