@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-  unless @user
+    unless @user
     flash[:error] = "Must be logged in"
     redirect_to root_url and return
   end
@@ -44,6 +44,14 @@ end
   def profile
     @user = current_user
   end
+
+  def join
+    @user = User.find(session[:user_id])
+    render :join
+  end
+
+
+
 
   private
   def user_params
