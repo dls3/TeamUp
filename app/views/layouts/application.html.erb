@@ -7,40 +7,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag    "https://fonts.googleapis.com/css?family=Josefin+Sans:700|Libre+Baskerville" %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Sarpanch" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
   </head>
 
   <body>
 
-  <div class = "top_of_page">
-
-    <h1 id='logo'> Team Up </h1>
-
     <nav class = 'navbar'>
-        <a href = '/index'> HOME &ensp;  </a>
+      <ul>
+        <li><a href = '/index'>HOME</a></li>
         <% if current_user %>
-        <a href = '/users/profile'> PROFILE &ensp; </a>
-        <a href = '/games/new'> START A GAME &ensp; </a>
+        <li><a href = '/users/profile'>PROFILE</a></li>
+        <li><a href = '/games/new'>START A GAME</a></li>
         <% end %>
-        <a href = '/search'> FIND A GAME &ensp; </a>
-        <a href = '/about'> ABOUT US </a>
-    </nav>
-
-  <div class = "navnav">
-    <nav class="site-nav">
+        <li><a href = '/search'>FIND A GAME</a></li>
+        <li><a href = '/about'>ABOUT US</a></li>
         <% if current_user %>
-        <%= link_to "LOGOUT" , logout_path(id:current_user), method: :destroy%>
-        <% elsif %>
-        <span id = "loginbutton"><%= link_to "LOGIN", remote: true %></span>
-        <%= link_to "REGISTER", new_user_path %>
+          <li><%= link_to "LOGOUT" , logout_path(id:current_user), method: :destroy%></li>
+          <% elsif %>
+          <li><span id = "loginbutton"><%= link_to "LOGIN", remote: true %></span></li>
+          <li><%= link_to "REGISTER", new_user_path %></li>
       <% end %>
-  </div>
+    </ul>
+  </nav>
+  <!-- <h1 id='logo'> Team Up </h1> -->
+
       <!-- YOU ARE NOW LOGGED IN AS -->
       <div class = "welcome">
         <% if current_user %>
@@ -48,9 +44,6 @@
         <% end %>
       </div>
     </nav>
-
-
-  </div>
 
     <!-- LOGIN FORM (HIDDEN) BEING USED WITH JAVASCRIPT! -->
     <div class="loginform_container">
@@ -74,6 +67,7 @@
         </div>
         <br>
         <br>
+        <%= f.submit 'Login' %>
         <%= f.submit 'Play Ball' %>
 
       <% end %>
@@ -84,16 +78,14 @@
     </div>
 
 
-
   <main>
     <%= yield %>
   </main>
 
 <!-- google maps url -->
-  <script async defer
+  <!-- <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlGnBvt0DySOTD4Oh0AJ3N-vWRDt1xnkE&callback=initMap&libraries=places">
-  </script>
-
+  </script> -->
 
   </body>
 
