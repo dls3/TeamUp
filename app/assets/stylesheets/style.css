@@ -69,11 +69,30 @@ body{
 .index_container {
   background-image: url("newoutdoor.jpg");
   width: 100%;
-  height: 100%;
+  height: 80%;
   margin: auto;
   background-position: center;
   position: absolute;
 }
+
+.dash_images {
+  padding: 0 10%;
+}
+
+.top_row {
+  position:relative;
+  display:inline-block;
+  width: 33%;
+  margin: 780px; auto 0;
+}
+
+.bottom_row {
+  position:relative;
+  display:inline-block;
+  width: 33%;
+  margin: 33px; auto 0;
+}
+
 
 /*.index_container {
   background-image: url("grass.jpg");
