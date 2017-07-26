@@ -14,20 +14,24 @@
 
 .navbar {
   text-decoration: none;
-  background-color: #F5EEF8;
+  background-color: #E8F6F3;
+  color: #4B4B4B;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
   margin: auto;
+  z-index: 100;
+  position: fixed;
 }
 
 .user-nav {
+  position: fixed;
   text-decoration: none;
+  color: #4B4B4B;
   text-align: center;
   line-height: 50px;
   display: inline;
   margin: auto;
-  position: fixed;
   top: 0;
   width: 100%;
 }
@@ -54,7 +58,8 @@ ul a {
 
 a:visited {
   text-decoration: none;
-  color: black;
+  color: #4B4B4B;
+
 }
 
 a:hover{

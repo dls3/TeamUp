@@ -18,6 +18,22 @@
   position: absolute;
 }
 
+.dash_banner {
+  text-decoration: none;
+  background-color: #E8F6F3;
+  text-align: center;
+  padding-bottom: 10px;
+  width: 100%;
+  margin: auto;
+}
+
+.this_week {
+  color: #4B4B4B;
+  font-size: 20px;
+  padding-top: 763px;
+  width: 100%;
+}
+
 .dash_images {
   padding: 0 10%;
 }
@@ -26,7 +42,7 @@
   position:relative;
   display:inline-block;
   width: 33%;
-  margin: 780px auto 0;
+  margin: 3px auto 0;
 }
 
 .bottom_row {
