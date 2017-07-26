@@ -1,12 +1,12 @@
 <h1>Your Joined Games</h1>
-<% @rsvp.each do |r| %>
+<% @rsvps.each do |rsvp| %>
   <ul>
     <li>
-      <p> Event: <%= r.event_name %> </p>
-      <p> Sport: <%= r.sport %> </p>
-      <p> Date: <%= r.date %> at <%= r.time %> </p>
-      <p> Players Needed: <%= r.players_needed %> </p>
-      <p> Current Playeres: <%= r.current_players %> </P>
+      <% m = Game.find_by(id:rsvp.game_id) %>
+      <%= m.event_name %>
+
+
+
     </li>
   </ul>
 <% end %>
