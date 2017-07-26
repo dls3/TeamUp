@@ -8,7 +8,7 @@
 
 <div class="your-game">
     <div class="profile_links">
-      <h2 class="link1"><%= link_to "Joined Games", users_path %></h2>
+      <h2 class="link1"><%= link_to "Joined Games", users_join_games_path %></h2>
         <% if current_user.games.any? %>
           <h2 class="link2"><%= link_to "My Created Games", users_own_games_path %></h2>
         <% end %>

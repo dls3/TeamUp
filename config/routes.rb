@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   get '/users/own_games' => 'users#showr'
 
-  get 'users/join_games' => 'users#join'
+  get '/users/join_games' => 'rsvps#show'
+
 
   get '/index' => 'dashboard#index'
   get '/sessions' => 'sessions#new', :as => :login

@@ -1,8 +1,7 @@
 class Rsvp < ApplicationRecord
   belongs_to :users
   belongs_to :games
-
-  validates :require_login,
+  validate  :require_login
 
 
 
@@ -12,6 +11,17 @@ class Rsvp < ApplicationRecord
       redirect_to root_path
     return
     end
+  end
+
+  def rsvp_action
+    @rsvp = Rsvp.new(params[:game_id],params[:user_id])
+    @game = Game.find(params[:id])
+    @user = User.find(params[:id])
+
+
+    rsvp = @rsvp.where(game_id = @game, user_id = @user)
+    rsvp.players_needed -= 1
+    rsvp.current_players += 1
   end
 
 end
