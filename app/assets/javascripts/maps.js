@@ -7,27 +7,47 @@ function initMap() {
     zoom: 11
   });
 
-  // $.ajax({
-  //       url: 'http://localhost:3000/courts',
-  //       method: 'GET',
-  //       dataType: 'json',
-  //     }).done(function(results) {
-  //       var contentString = '<div id="content">'+
-  //       '<div id="siteNotice">'+
-  //       '</div>'+
-  //       '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-  //       '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match at ' + court[0] +
-  //       '</div>'+
-  //       '</div>';
+  $.ajax({
+    url: 'http://localhost:3000/courts',
+    method: 'GET',
+    dataType: 'json',
+    }).done(function(results) {
+    for (var i = 0; i < results.length; i++) {
+      var results = results[i];
 
-  var courts = [
-    ['Shawnee Park Tennis Court', 43.79754498, -79.33870752, 6],
-    ["Hanlan's Point Park Tennis Court", 43.61994414, -79.39161271, 5],
-    ['Beaches Park Tennis Court', 43.66616962,-79.29970757, 4],
-    ['Malvern Park Tennis Court', 43.80901631, -79.21793821, 3],
-    ['Oriole Park Tennis Court', 43.6969922, -79.39928015, 2],
-    ['Rosedale Park Tennis Court', 43.68304016, -79.380109, 1]
-  ];
+      var marker = new google.maps.Marker({
+        position: {lat: results.lat, lng: results.long},
+        animation: google.maps.Animation.DROP,
+        map: map,
+        icon: image,
+        shape: shape,
+        title: results.name
+      });
+      var contentString = '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
+      '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match at <br>' + results.name + '</p></div>';
+
+      AddInfowWindow(marker, contentString);
+    }
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+    function AddInfowWindow(marker, contentString) {
+      var infoWindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+      google.maps.event.addListener(marker, 'click', function() {
+        if (!marker.open) {
+            infoWindow.open(map,marker);
+            marker.open = true;
+        }
+        else {
+            infoWindow.close();
+            marker.open = false;
+        };
+      });
+    };
+  });  // Close .done function
 
   // Rails.root.join("assets", "lib", "tennis-15.svg")
   var image = {
@@ -47,41 +67,34 @@ function initMap() {
     type: 'poly'
   };
 
-  for (var i = 0; i < courts.length; i++) {
-    var court = courts[i];
-
-    var marker = new google.maps.Marker({
-      position: {lat: court[1], lng: court[2]},
-      animation: google.maps.Animation.DROP,
-      map: map,
-      icon: image,
-      shape: shape,
-      title: court[0],
-      zIndex: court[3]
-    });
-    var contentString = '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-    '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match at <br>' + court[0] + '</p></div>';
-
-    AddInfowWindow(marker, contentString);
-  }
-}
+}  // Close InitMap function
 
 closeInfoWindow = function() {
   infoWindow.close();
 };
 
-function AddInfowWindow(marker, contentString) {
-  var infoWindow = new google.maps.InfoWindow({
-    content: contentString
-  });
-  google.maps.event.addListener(marker, 'click', function() {
-    if (!marker.open) {
-        infoWindow.open(map,marker);
-        marker.open = true;
-    }
-    else {
-        infoWindow.close();
-        marker.open = false;
-    };
-  });
-};
+// function AddInfowWindow(marker, contentString) {
+//   var infoWindow = new google.maps.InfoWindow({
+//     content: contentString
+//   });
+//   google.maps.event.addListener(marker, 'click', function() {
+//     if (!marker.open) {
+//         infoWindow.open(map,marker);
+//         marker.open = true;
+//     }
+//     else {
+//         infoWindow.close();
+//         marker.open = false;
+//     };
+//   });
+// };
+
+
+// var courts = [
+//   ['Shawnee Park Tennis Court', 43.79754498, -79.33870752, 6],
+//   ["Hanlan's Point Park Tennis Court", 43.61994414, -79.39161271, 5],
+//   ['Beaches Park Tennis Court', 43.66616962,-79.29970757, 4],
+//   ['Malvern Park Tennis Court', 43.80901631, -79.21793821, 3],
+//   ['Oriole Park Tennis Court', 43.6969922, -79.39928015, 2],
+//   ['Rosedale Park Tennis Court', 43.68304016, -79.380109, 1]
+// ];
