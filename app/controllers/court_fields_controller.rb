@@ -8,11 +8,11 @@ class CourtFieldsController < ApplicationController
     @courts = CourtField.all
      respond_to do |format|
        format.html{
-           render json: {:users => @courts}
+           render json: {:courts => @courts}
        }
        format.js {}
        format.json {
-          render json: {:users => @courts}
+          render json: {:courts => @courts}
        }
      end
    end

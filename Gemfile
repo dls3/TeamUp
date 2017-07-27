@@ -11,6 +11,8 @@ gem 'rails', '~> 5.1.2'
 gem 'sqlite3'
 # Postgres
 gem 'pg'
+# JQuery
+gem 'jquery-rails'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
