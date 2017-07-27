@@ -83,6 +83,7 @@ body{
     bottom: 0;
     left: 0;
     padding: 1rem;
+    padding-left: -1rem;
     background-color: #efefef;
     text-align: center;
     margin: 0 auto;
