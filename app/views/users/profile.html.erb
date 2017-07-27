@@ -1,17 +1,23 @@
-<h1>My Profile</h1>
+<center>
+  <div class = "index_container">
+  </div>
+
+    <div class = "dash_banner">
+       <div class = "this_week">MY PROFILE</div>
+    </div>
 
 <h3 class = "user-name"> <%= "Hello #{@user.name}"%> </h3>
-
 <div class="user_info">
-  <p>Email: <%= @user.email %></p>
+  <p>EMAIL: <%= @user.email %></p>
 </div>
 
 <div class="your-game">
     <div class="profile_links">
-      <h2 class="link1"><%= link_to "Joined Games", users_path %></h2>
+      <h2 class="link1"><%= link_to "JOINED GAMES", users_path %></h2>
         <% if current_user.games.any? %>
-          <h2 class="link2"><%= link_to "My Created Games", users_own_games_path %></h2>
+          <h2 class="link2"><%= link_to "MY CREATED GAMES", users_own_games_path %></h2>
         <% end %>
 
       </div>
 </div>
+</center>
