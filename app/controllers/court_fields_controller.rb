@@ -5,12 +5,16 @@ class CourtFieldsController < ApplicationController
   end
 
   def populate
-    respond_to do |format|
-      format.json do
-        @courts = CourtFields.all
-        render json: @courts, include: :name, :address, :neighbourhood, :lat, :long
-      end
-    end
-  end
+    @courts = CourtField.all
+     respond_to do |format|
+       format.html{
+           render json: {:courts => @courts}
+       }
+       format.js {}
+       format.json {
+          render json: {:courts => @courts}
+       }
+     end
+   end
 
 end
