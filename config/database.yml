@@ -16,7 +16,7 @@ default: &default
 development:
   adapter: postgresql
   encoding: utf8
-  database: teamup_development
+  database: TeamUp_development
   pool: 5
   username:
   password:
@@ -31,7 +31,7 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  database: teamup_production
+  database: TeamUp_production
   pool: 5
   username:
   password:
