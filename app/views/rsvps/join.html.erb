@@ -3,10 +3,12 @@
   <ul>
     <li>
       <% m = Game.find_by(id:rsvp.game_id) %>
-      <%= m.event_name %>
-
-
-
+      <p> Event Name: <%= m.event_name %> </p>
+      <p> Sport: <%= m.sport %> </p>
+      <p> Players Needed: <%= m.players_needed %> </p>
+      <p> Current Players: <%= m.current_players %> </p>
+      <p> Skill: <%= m.skill %> </p>
+      <p> Time: <%= m.time %> </p>
     </li>
   </ul>
 <% end %>

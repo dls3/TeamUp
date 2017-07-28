@@ -19,10 +19,12 @@ class RsvpsController < ApplicationController
     @rsvp = Rsvp.new(user_id: params[:user_id], game_id: params[:game_id])
     #@games = Game.where(user_id:params[:user_id], game_id: params[:game_id])
     @rsvps = Rsvp.where(user_id: params[:user_id])
+  
+
      # Empty array
      # Iterate through rsvps
      # Get their game ID
-     # Find the game object using the ID and then push that into the empty games array 
+     # Find the game object using the ID and then push that into the empty games array
 
     if @rsvp.save
       flash[:notice] = "You have RSVP'd for #{@game.event_name} at #{@game.time}"

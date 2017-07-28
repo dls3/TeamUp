@@ -43,6 +43,7 @@ end
 
   def profile
     @user = current_user
+    @games = @user.games
   end
 
   def join
