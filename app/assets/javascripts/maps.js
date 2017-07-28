@@ -52,11 +52,13 @@ function initMap() {
       zIndex: court[3]
     });
     var contentString = '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-    '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match at <br>' + court[0] + '</p></div>';
+    '<div id="bodyContent">'+ '<p><b><a href="http://localhost:3000/search"' + '/bookings/new">Click Here</a></b> to join this tennis match at <br>' + court[0] + '</p></div>';
 
     AddInfowWindow(marker, contentString);
   }
 }
+
+'<a href="http://localhost:3000/listings/' + result.id + '/bookings/new">Book Now </a>'
 
 closeInfoWindow = function() {
   infoWindow.close();
