@@ -88,3 +88,13 @@ body{
     text-align: center;
     margin: 0 auto;
 }
+
+center {
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+
+#search-form {
+  padding-top: 50px;
+}
