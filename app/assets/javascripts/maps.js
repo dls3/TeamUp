@@ -52,7 +52,7 @@ function initMap() {
       zIndex: court[3]
     });
     var contentString = '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-    '<div id="bodyContent">'+ '<p><b><a href="http://localhost:3000/user"' + '>Click Here</a></b> to join this tennis match at <br>' + court[0] + '</p></div>';
+    '<div id="bodyContent">'+ '<p><b><a href="http://localhost:3000/games"' + '>Click Here</a></b> to join this tennis match at <br>' + court[0] + '</p></div>';
 
     AddInfowWindow(marker, contentString);
   }
