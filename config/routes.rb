@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   get '/users/own_games' => 'users#showr'
 
+  get '/users/join_games' => 'rsvps#create'
+
+
   get '/index' => 'dashboard#index'
   get '/sessions' => 'sessions#new', :as => :login
   get '/sessions' => 'sessions#create'
@@ -25,8 +28,14 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :sessions, only: [:new, :create, :destory]
-  resources :games, only: [:new, :create, :show, :edit, :update]
+  # resources :games, only: [:new, :create, :show, :edit, :update]
   resources :dashboard
+  resources :games do
+    resources :rsvps
+  end
+
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

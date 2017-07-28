@@ -1,7 +1,7 @@
 <center>
   <div class="games">
   <% @games.each do |game| %>
-    <h2><%= game.event_name %> </h2>
+    <h3><%= link_to game.event_name, game_path(game.id) %></h3>
     <p>Sport: <%= game.sport %></p>
     <p>Players Needed: <%= game.players_needed %> </p>
     <p>Currently Have: <%= game.current_players %> </p>

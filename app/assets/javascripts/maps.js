@@ -7,24 +7,16 @@ function initMap() {
     zoom: 11
   });
 
-  // $.ajax({
-  //       url: 'http://localhost:3000/courts',
-  //       method: 'GET',
-  //       dataType: 'json',
-  //     }).done(function(results) {
-  //       var contentString = '<div id="content">'+
-  //       '<div id="siteNotice">'+
-  //       '</div>'+
-  //       '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-  //       '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match at ' + court[0] +
-  //       '</div>'+
-  //       '</div>';
 
   var courts = [
-    ['Shawnee Park Tennis Court', 43.79754498, -79.33870752, 6],
+    ["MARILYN BELL PARK", 43.6308, -79.4331, 10],
+    ["LAKESHORE BOULEVARD PARKLANDS", 43.6336196, -79.43823951, 9],
+    ["Jonathan Ashbridge Park", 43.66479575,-79.32022022,	8],
+    ["Humber Valley Park Tennis Court",	43.66432332, -79.52479819, 7],
+    ["Hillcrest Park Tennis Court", 43.67600872, -79.42386171, 6],
     ["Hanlan's Point Park Tennis Court", 43.61994414, -79.39161271, 5],
     ['Beaches Park Tennis Court', 43.66616962,-79.29970757, 4],
-    ['Malvern Park Tennis Court', 43.80901631, -79.21793821, 3],
+    ["Westmount Park Tennis Courts", 43.68744812, -79.51912878, 3],
     ['Oriole Park Tennis Court', 43.6969922, -79.39928015, 2],
     ['Rosedale Park Tennis Court', 43.68304016, -79.380109, 1]
   ];
@@ -71,6 +63,7 @@ closeInfoWindow = function() {
 };
 
 function AddInfowWindow(marker, contentString) {
+
   var infoWindow = new google.maps.InfoWindow({
     content: contentString
   });
