@@ -54,14 +54,13 @@ body{
 }
 
 #map {
-  z-index: 10;
   position: fixed;
   clear: both;
-  width: 800px;
-  height: 500px;
+  width: 1000px;
+  height: 600px;
   margin: auto;
   top: 70px;
-  bottom: 0;
+  bottom: 20px;
   right: 0;
   left: 0;
 }
