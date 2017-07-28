@@ -1,4 +1,6 @@
-<div class = "start_game_error">
+<center>
+
+  <div class = "start_game_error">
   <%= form_for @game do |f| %>
     <% if @game.errors.any? %>
       <div id = "error_explanation">
@@ -57,3 +59,5 @@
 <%= f.submit 'Create Game' %>
 
 <% end %>
+
+</center>

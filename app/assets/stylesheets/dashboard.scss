@@ -1,10 +1,54 @@
-// Place all the styles related to the dashboard controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
+.body {
+  margin-bottom: 1rem;
+}
 
 #dashboard {
   position: absolute;
   top: 220px;
   left: 5px;
+}
+
+.index_container {
+  background-image: url("newoutdoor.jpg");
+  width: 100%;
+  height: 80%;
+  margin: auto;
+  background-position: center;
+  position: absolute;
+}
+
+.dash_banner {
+  text-decoration: none;
+  background-color: #F4F6F6;
+  text-align: center;
+  padding-bottom: -1px;
+  width: 100%;
+  margin: auto;
+}
+
+.dash_header {
+  color: #4B4B4B;
+  font-size: 20px;
+  padding-top: 790px;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.dash_images {
+  padding: 0 10%;
+}
+
+.top_row {
+  position:relative;
+  display:inline-block;
+  width: 33%;
+  margin: 3px auto 0;
+}
+
+.bottom_row {
+  position:relative;
+  display:inline-block;
+  width: 33%;
+  margin: 33px auto 0;
 }

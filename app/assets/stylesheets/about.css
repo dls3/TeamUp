@@ -1,21 +1,22 @@
-.about_container {
-  background-image: url("hockey.jpg");
-  background-position: center;
-  margin: auto;
-  width: 1500px;
-  height: 500px;
-  position: fixed;
-  left: 80px;
-}
+/*.about_container {*/
+  /*background-image: url("hockey.jpg");*/
+  /*background-position: center;
+  margin: auto;*/
+  /*width: 1500px;
+  height: 400px;*/
+  /*position: fixed;
+  left: 80px;*/
+/*}*/
 
 .about {
-  font-family: 'Allerta Stencil';
+  /*font-family: 'Allerta Stencil';*/
+  font-family: 'Proxima Nova';
   font-size: 20px;
   color: white;
   text-align: center;
   background-color: rgba(50, 50, 50, 0.5);
   width: 1000px;
-  height:400px;
+  height:330px;
   margin: auto;
   padding: 20px;
   top: 220px;

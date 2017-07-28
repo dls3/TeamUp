@@ -1,4 +1,5 @@
-<div class="games">
+<center>
+  <div class="games">
   <% @games.each do |game| %>
     <h3><%= link_to game.event_name, game_path(game.id) %></h3>
     <p>Sport: <%= game.sport %></p>
@@ -10,3 +11,5 @@
   <% end %>
 
 </div>
+
+</center>

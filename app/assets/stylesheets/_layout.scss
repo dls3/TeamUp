@@ -14,20 +14,24 @@
 
 .navbar {
   text-decoration: none;
-  background-color: #F5EEF8;
+  background-color: #F4F6F6;
+  color: #4B4B4B;
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   margin: auto;
+  z-index: 100;
+  position: fixed;
 }
 
 .user-nav {
+  position: fixed;
   text-decoration: none;
+  color: #4B4B4B;
   text-align: center;
   line-height: 50px;
   display: inline;
   margin: auto;
-  position: fixed;
   top: 0;
   width: 100%;
 }
@@ -41,8 +45,8 @@ ul li {
 
 ul a {
   text-align: center;
-  padding-left: 7px;
-  padding-right: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
   text-decoration: none;
 }
 
@@ -54,7 +58,8 @@ ul a {
 
 a:visited {
   text-decoration: none;
-  color: black;
+  color: #4B4B4B;
+
 }
 
 a:hover{
