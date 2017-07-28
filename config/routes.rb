@@ -26,6 +26,9 @@ Rails.application.routes.draw do
 
   get '/courts' => 'court_fields#populate'
 
+  post '/rsvp/index' => 'rsvps#index'
+  get '/rsvp/index' => 'rsvps#index'
+
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :sessions, only: [:new, :create, :destory]
   # resources :games, only: [:new, :create, :show, :edit, :update]
