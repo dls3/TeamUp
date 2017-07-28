@@ -1,8 +1,8 @@
-<% app_name = Rails.application.class.parent_name.underscore %>
+# <% app_name = Rails.application.class.parent_name.underscore %>
 
 development:
   adapter: postgresql
-  database: <%= app_name %>_development
+  database: teamup_development
 
 test:
   adapter: postgresql
@@ -10,4 +10,4 @@ test:
 
 production:
   adapter: postgresql
-  database: <%= app_name %>_production
+  database: teamup_production
