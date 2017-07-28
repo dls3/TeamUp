@@ -9,16 +9,16 @@ function initMap() {
 
 
   var courts = [
-    ["MARILYN BELL PARK", 43.6308, -79.4331, 10],
-    ["LAKESHORE BOULEVARD PARKLANDS", 43.6336196, -79.43823951, 9],
+    ["Marilyn Bell Park Tennis Courts", 43.6308, -79.4331, 10],
+    ["Lakeshore Boulebard Parklands Tennis Courts", 43.6336196, -79.43823951, 9],
     ["Jonathan Ashbridge Park", 43.66479575,-79.32022022,	8],
-    ["Humber Valley Park Tennis Court",	43.66432332, -79.52479819, 7],
-    ["Hillcrest Park Tennis Court", 43.67600872, -79.42386171, 6],
-    ["Hanlan's Point Park Tennis Court", 43.61994414, -79.39161271, 5],
-    ['Beaches Park Tennis Court', 43.66616962,-79.29970757, 4],
+    ["Humber Valley Park Tennis Courts",	43.66432332, -79.52479819, 7],
+    ["Hillcrest Park Tennis Courts", 43.67600872, -79.42386171, 6],
+    ["Hanlan's Point Park Tennis Courts", 43.61994414, -79.39161271, 5],
+    ["Beaches Park Tennis Courts", 43.66616962,-79.29970757, 4],
     ["Westmount Park Tennis Courts", 43.68744812, -79.51912878, 3],
-    ['Oriole Park Tennis Court', 43.6969922, -79.39928015, 2],
-    ['Rosedale Park Tennis Court', 43.68304016, -79.380109, 1]
+    ["Oriole Park Tennis Courts", 43.6969922, -79.39928015, 2],
+    ["Rosedale Park Tennis Courts", 43.68304016, -79.380109, 1]
   ];
 
   // Rails.root.join("assets", "lib", "tennis-15.svg")
@@ -52,13 +52,15 @@ function initMap() {
       zIndex: court[3]
     });
     var contentString = '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-    '<div id="bodyContent">'+ '<p><b><a href="http://localhost:3000/search"' + '/bookings/new">Click Here</a></b> to join this tennis match at <br>' + court[0] + '</p></div>';
+    '<div id="bodyContent">'+ '<p><b><a href="http://localhost:3000/users/profile"' + '>Click Here</a></b> to join this tennis match at <br>' + court[0] + '</p></div>';
+
+// http://localhost:3000/users/join_games
+// http://localhost:3000/users/profile
 
     AddInfowWindow(marker, contentString);
   }
 }
 
-'<a href="http://localhost:3000/listings/' + result.id + '/bookings/new">Book Now </a>'
 
 closeInfoWindow = function() {
   infoWindow.close();
@@ -79,4 +81,5 @@ function AddInfowWindow(marker, contentString) {
         marker.open = false;
     };
   });
+
 };
