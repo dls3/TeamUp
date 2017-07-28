@@ -1,0 +1,14 @@
+<h1>Your Joined Games</h1>
+<% @rsvp.each do |r| %>
+  <ul>
+    <li>
+      <p> Event: <%= r.event_name %> </p>
+      <p> Sport: <%= r.sport %> </p>
+      <p> Date: <%= r.date %> at <%= r.time %> </p>
+      <p> Players Needed: <%= r.players_needed %> </p>
+      <p> Current Playeres: <%= r.current_players %> </P>
+    </li>
+  </ul>
+<% end %>
+
+<%= link_to 'Back to Profile', users_profile_path, class: 'back_profile' %>

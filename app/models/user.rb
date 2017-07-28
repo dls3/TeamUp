@@ -4,7 +4,6 @@ class User < ApplicationRecord
 
 
   has_many :games
-  has_many :rsvps
   has_many :owned_games, class_name: "Game", foreign_key: "owner_id"
 
   validates :email, uniqueness: true

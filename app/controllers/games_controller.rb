@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   attr_accessor :date, :time, :players_needed, :current_players, :description, :skill
-  # before_action :require_login, only: [:new, :create]
+
 
   def index
     @games = Game.all
