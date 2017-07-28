@@ -3,12 +3,8 @@ class RsvpsController < ApplicationController
 # before_action :rsvp?, only: [:show, :destroy]
 
   def index
-    @rsvp = Rsvp.all
+    @rsvps = Rsvp.where(user_id: params[:user_id], game_id: params[:game_id])
   end
-
-  # def show
-  #   @rsvp = Rsvp.find(params[:id])
-  # end
 
   def new
     @rsvp = Rsvp.new
@@ -19,7 +15,7 @@ class RsvpsController < ApplicationController
     @rsvp = Rsvp.new(user_id: params[:user_id], game_id: params[:game_id])
     #@games = Game.where(user_id:params[:user_id], game_id: params[:game_id])
     @rsvps = Rsvp.where(user_id: params[:user_id])
-  
+
 
      # Empty array
      # Iterate through rsvps
@@ -31,6 +27,8 @@ class RsvpsController < ApplicationController
       render :join
     end
   end
+
+
 
   def destroy
     @rsvp.destroy
