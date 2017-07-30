@@ -1,5 +1,6 @@
 function initMap() {
   console.log('inside init map');
+  console.log( document.getElementById('map'));
 
   var toronto = new google.maps.LatLng(43.642,-79.387);
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -7,21 +8,6 @@ function initMap() {
     zoom: 11
   });
 
-
-  var courts = [
-    ["Marilyn Bell Park Tennis Courts", 43.6308, -79.4331, 10],
-    ["Lakeshore Boulebard Parklands Tennis Courts", 43.6336196, -79.43823951, 9],
-    ["Jonathan Ashbridge Park", 43.66479575,-79.32022022,	8],
-    ["Humber Valley Park Tennis Courts",	43.66432332, -79.52479819, 7],
-    ["Hillcrest Park Tennis Courts", 43.67600872, -79.42386171, 6],
-    ["Hanlan's Point Park Tennis Courts", 43.61994414, -79.39161271, 5],
-    ["Beaches Park Tennis Courts", 43.66616962,-79.29970757, 4],
-    ["Westmount Park Tennis Courts", 43.68744812, -79.51912878, 3],
-    ["Oriole Park Tennis Courts", 43.6969922, -79.39928015, 2],
-    ["Rosedale Park Tennis Courts", 43.68304016, -79.380109, 1]
-  ];
-
-  // Rails.root.join("assets", "lib", "tennis-15.svg")
   var image = {
     url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
     // This marker is 20 pixels wide by 32 pixels high.
@@ -39,24 +25,46 @@ function initMap() {
     type: 'poly'
   };
 
-  for (var i = 0; i < courts.length; i++) {
-    var court = courts[i];
+  $.ajax({
+    url: '/courts',
+    method: 'GET',
+    dataType: 'json'
+  }).done(function(results) {
+      // console.log(results["courts"].length);
 
-    var marker = new google.maps.Marker({
-      position: {lat: court[1], lng: court[2]},
-      animation: google.maps.Animation.DROP,
-      map: map,
-      icon: image,
-      shape: shape,
-      title: court[0],
-      zIndex: court[3]
-    });
-    var contentString = '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-    '<div id="bodyContent">'+ '<p><b><a href="https://arcane-wildwood-63164.herokuapp.com/games"' + '>Click Here</a></b> to join this tennis match at <br>' + court[0] + '</p></div>';
+      for (var i = 0; i <= results["courts"].length; i++) {
+      // for (var i = 0; i <= 10; i++) {
+        // results = results["courts"][i]
 
-    AddInfowWindow(marker, contentString);
-  }
-}
+        var lat = Number(results["courts"][i]["lat"]);
+        var long = Number(results["courts"][i]["long"]);
+
+        console.log(lat, long);
+        console.log(typeof(lat));
+
+        // var myLatLng = {lat: Number(results["courts"][i]["lat"]), lng: Number(results["courts"][i]["long"]);
+
+        var marker = new google.maps.Marker({
+          map: map,
+          // position: {lat: Number(results["courts"][i]["lat"]), lng: Number(results["courts"][i]["long"])},
+          position: {lat: long, lng: lat},
+          animation: google.maps.Animation.DROP,
+          icon: image,
+          shape: shape,
+          title: results["courts"][i]["name"]
+        });
+        var contentString = '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
+        '<div id="bodyContent">'+ '<p><b>Click here</b> to join this tennis match at <br>' + results["courts"][i]["name"] + '</p></div>';
+
+        AddInfowWindow(marker, contentString);
+
+      }   // CLOSE LOOP
+
+    })  // *** CLOSES DONE FUNCTION ***
+    .done( function() {
+      console.log("AJAX REQUEST done")
+    }) // *** CLOSES DONE ***
+  };  // CLOSES MAIN FUNCTION ***
 
 closeInfoWindow = function() {
   infoWindow.close();
