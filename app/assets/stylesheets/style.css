@@ -62,7 +62,7 @@ body{
 #map {
   position: fixed;
   clear: both;
-  width: 1000px;
+  width: 1200px;
   height: 600px;
   margin: auto;
   top: 70px;
@@ -72,6 +72,7 @@ body{
   -webkit-box-shadow: 3px 3px 5px 6px grey;
   -moz-box-shadow:    3px 3px 5px 6px grey;
   box-shadow:         3px 3px 5px 6px grey;
+  padding: 15px;
 }
 
 /*.index_container {
