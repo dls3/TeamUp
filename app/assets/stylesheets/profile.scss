@@ -1,0 +1,18 @@
+
+
+.user-name {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.email {
+  font-size: 20px;
+}
+
+.dash_header {
+  font-size: 50px;
+  border-bottom: 5px solid transparent;
+  border-image: linear-gradient(to right, #ffcf5c, #207068);
+  border-image-slice: 5;
+  margin-top: -10px;
+}

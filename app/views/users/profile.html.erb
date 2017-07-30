@@ -6,10 +6,9 @@
        <div class = "dash_header">MY PROFILE</div>
     </div>
 
-<h3 class = "user-name"> <%= "Hello #{@user.name}"%> </h3>
-<div class="user_info">
-  <p>EMAIL: <%= @user.email %></p>
-</div>
+<div class = "user_info">
+  <h3 class = "user-name"> <%= "Hello #{@user.name}"%> </h3>
+  <p class = "email">EMAIL: <%= @user.email %></p>
 
 <% if current_user %>
 
@@ -31,6 +30,8 @@
         <% game_id = game.id %>
       <% end %>
       <%= link_to "Joined Games", rsvp_index_path %>
-
 <% end %>
+</div>
+</div>
+</div>
 </center>

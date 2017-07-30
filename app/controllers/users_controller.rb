@@ -19,9 +19,9 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
 
-      UserMailer.welcome_email(@user).deliver
-      format.html { redirect_to(@user, notice: 'User was successfully created.') }
-      format.json { render json: @user, status: :created, location: @user }
+      # UserMailer.welcome_email(@user).deliver
+      # format.html { redirect_to(@user, notice: 'User was successfully created.') }
+      # format.json { render json: @user, status: :created, location: @user }
       flash[:notice] = 'Welcome!'
       redirect_to '/'
     else
