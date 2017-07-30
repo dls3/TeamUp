@@ -3,9 +3,10 @@
   </div>
 
     <div class = "dash_banner">
-       <div class = "dash_header">SIGN UP FOLKS!</div>
+       <div id = "dash_header">SIGN UP FOLKS!</div>
     </div>
 
+<div class = "new_user">
 <%= form_for @user do |f| %>
 
   <div class = "sign_up_error">
@@ -42,10 +43,16 @@
     <%= f.password_field :password_confirmation %>
   </div>
 
+  </br>
+
   <%= f.submit 'Sign Up' %>
+
+</div>
 
 
 <% end %>
+
+  </br>
 
 <%= link_to 'Back', root_path %>
 

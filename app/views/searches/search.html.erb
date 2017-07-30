@@ -19,8 +19,11 @@
 
 
 <%= form_tag(search_results_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :sport, params[:sport], placeholder: "Search Sports" %> <br>
+    <%= text_field_tag :sport, params[:sport], placeholder: "Search Sports" %>
+    <br />
+    <br />
     <%= text_field_tag :neighbourhood, params[:neighbourhood], placeholder: "Search Neighbourhoods" %> <br>
+    <br />
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 

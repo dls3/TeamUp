@@ -6,6 +6,10 @@ class RsvpsController < ApplicationController
     @rsvps = Rsvp.where(user_id: params[:user_id], game_id: params[:game_id])
   end
 
+  def show
+    @rsvp = Rsvp.find(user_id: params[:user_id], game_id: params[:game_id])
+  end
+
   def new
     @rsvp = Rsvp.new
   end
