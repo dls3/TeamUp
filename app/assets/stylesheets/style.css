@@ -25,6 +25,7 @@ body{
     padding: 2em;
     padding-top: 50px;
     background-color: #F4F6F6;
+    text-shadow: 1px 1px grey;
     position: absolute;
     margin: auto;
     top: 0;
