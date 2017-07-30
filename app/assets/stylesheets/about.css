@@ -11,13 +11,16 @@
 .about {
   /*font-family: 'Allerta Stencil';*/
   font-family: 'Proxima Nova';
+   text-shadow: 1px 1px grey;
   font-size: 22px;
   color: white;
   text-align: center;
   background-color: #C8D5B3;
-  width: 1050px;
+  width: 70%;
   height:330px;
   margin: auto;
   padding-top: 10px;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
+  border-left: #C8D5B3 250px solid;
+  border-right:#C8D5B3 250px solid;
 }
