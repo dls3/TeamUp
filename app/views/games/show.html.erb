@@ -1,26 +1,34 @@
+<center class = "showgame">
+
+<div class = "box">
+
 <span class = "name" > <%= @game.event_name %> </span> <br>
 
 <div class = "info">
 
-<p> Description:  <%= @game.description %> </p>
+<p> <span id="gamed"> Description:  <%= @game.description %> </span> </p>
 <p> Date: <%= @game.date %> </p>
 <p> Time: <%= @game.time %> </p>
 <p> Skill:  <%= @game.skill %> </p>
 <p> Sport: <%= @game.sport %> </p>
 
 <!-- game_rsvp_path(game_id:@game.id) %>  -->
-
+<br />
+<br />
 <% if current_user %>
-  <%= link_to "Join", users_join_games_path(game_id: @game.id, user_id: current_user.id) %> 
+  <%= link_to "Join", users_join_games_path(game_id: @game.id, user_id: current_user.id) %> <br /><br />
 <% else %>
   <%= link_to "Sign Up", new_user_path %>
 <% end %>
-
 <% if current_user.id == @game.user_id%>
-  <%= link_to "Edit Game", edit_game_path(@game) %>
+  <%= link_to "Edit Game", edit_game_path(@game) %> <br /><br />
+  <%=link_to("Delete", game_path(@game.id), method: :delete, data: {confirm: "Are you sure you want to delete?"}) %> <br /><br />
 <% end %>
 
 
 </div>
 
 <%= link_to("Back to Home", root_url, class:'back_home') %>
+
+</div>
+</center>

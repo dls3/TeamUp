@@ -5,6 +5,7 @@
    <div class = "dash_header">CURRENT GAMES</div>
 </div>
 
+
   <% @games.each do |game| %>
    <p>
     <a href=/games/<%=game.id %>><%=game.event_name%></a> <%= game.sport %></a>

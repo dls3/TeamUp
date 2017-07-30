@@ -6,18 +6,19 @@
        <div class = "dash_header">MY GAMES</div>
     </div>
 
-<%= link_to 'Back', users_profile_path %>
+  <h3 id="back">
+  <%= link_to 'Back', users_profile_path %>
+  </h3>
 
     <div class="games">
       <% @games.each do |game| %>
-        <h2><%= game.event_name %> </h2>
+        <h2><%=link_to game.event_name, game_path(game.id)  %> </h2>
         <p>Sport: <%= game.sport %></p>
         <p>Players Needed: <%= game.players_needed %> </p>
         <p>Currently Have: <%= game.current_players %> </p>
         <p>Skill: <%= game.skill %> </p>
         <p> Date: <%= game.date %> </p>
         <p>Time: <%= game.time %> </p>
-
       <% end %>
     </div>
 
