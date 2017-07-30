@@ -16,19 +16,19 @@
 <br />
 <br />
 <% if current_user %>
-  <%= link_to "Join", users_join_games_path(game_id: @game.id, user_id: current_user.id) %> <br /><br />
+<div class = "button">   <%= link_to "Join", users_join_games_path(game_id: @game.id, user_id: current_user.id) %>  </div>
 <% else %>
-  <%= link_to "Sign Up", new_user_path %>
+  <div class = "button"> <%= link_to "Sign Up", new_user_path %> </div>
 <% end %>
 <% if current_user.id == @game.user_id%>
-  <%= link_to "Edit Game", edit_game_path(@game) %> <br /><br />
-  <%=link_to("Delete", game_path(@game.id), method: :delete, data: {confirm: "Are you sure you want to delete?"}) %> <br /><br />
+  <div class = "button"> <%= link_to "Edit Game", edit_game_path(@game) %> </div>  <br /><br />
+  <div class = "button"> <%=link_to("Delete", game_path(@game.id), method: :delete, data: {confirm: "Are you sure you want to delete?"}) %> </div> <br /><br />
 <% end %>
 
 
 </div>
 
-<%= link_to("Back to Home", root_url, class:'back_home') %>
+<div class = "button"> <%= link_to("Back to Home", root_url, class:'back_home') %> </div>
 
 </div>
 </center>
