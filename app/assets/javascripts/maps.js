@@ -17,8 +17,7 @@ function initMap() {
 
       for (var i = 0; i < results["courts"].length; i++) {
         console.log("INSIDE LOOP")
-
-        var results = JSON.parse(results)
+        results = results["courts"][i]
         console.log(results)
         var marker = new google.maps.Marker({
           position: {lat: results["courts"]["lat"], lng: results["courts"]["long"]},
