@@ -69,6 +69,9 @@ body{
   bottom: 20px;
   right: 0;
   left: 0;
+  -webkit-box-shadow: 3px 3px 5px 6px grey;
+  -moz-box-shadow:    3px 3px 5px 6px grey;
+  box-shadow:         3px 3px 5px 6px grey;
 }
 
 /*.index_container {
@@ -92,6 +95,7 @@ body{
     background-color: #efefef;
     text-align: center;
     margin: 0 auto;
+    text-shadow: .5px .5px grey;
 }
 
 center {
@@ -108,7 +112,6 @@ center {
 .dash_images{
   height: 800px;
 }
-
 
 
 .new_user .field {
