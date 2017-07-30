@@ -29,12 +29,14 @@ Rails.application.routes.draw do
   post '/rsvp/index' => 'rsvps#index'
   get '/rsvp/index' => 'rsvps#index'
 
+
+
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :sessions, only: [:new, :create, :destory]
   # resources :games, only: [:new, :create, :show, :edit, :update]
+  resource :games, only: %i(new create edit update destroy)
   resources :dashboard
   resources :games do
-    resources :rsvps
   end
 
 

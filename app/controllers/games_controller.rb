@@ -72,7 +72,7 @@ end
     @game = Game.find(params[:id])
     @game.destroy
     flash[:alert] = "Game removed"
-    redirect_to root_url
+    redirect_to users_own_games_path
   end
 
 
