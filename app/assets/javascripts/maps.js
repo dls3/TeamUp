@@ -24,7 +24,7 @@ function initMap() {
             map: map,
             position: {lat: long, lng: lat},
             animation: google.maps.Animation.DROP,
-            icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+            icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
             title: results["courts"][i]["name"]
             });
           }
@@ -33,7 +33,7 @@ function initMap() {
             map: map,
             position: {lat: long, lng: lat},
             animation: google.maps.Animation.DROP,
-            icon: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png',
+            icon: 'https://maps.google.com/mapfiles/ms/icons/purple-dot.png',
             title: results["courts"][i]["name"]
           });
         }
@@ -42,7 +42,7 @@ function initMap() {
             map: map,
             position: {lat: long, lng: lat},
             animation: google.maps.Animation.DROP,
-            icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+            icon: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
             title: results["courts"][i]["name"]
           });
         }
