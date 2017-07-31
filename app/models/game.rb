@@ -5,8 +5,9 @@ class Game < ApplicationRecord
 
   validates :players_needed, presence: true, numericality: true
   validates :current_players, presence: true, numericality: true
-  validates :date, :time, :sport, :skill, presence: true
-  validates :event_name, presence: true, uniqueness: {case_sensitive: false}
+  validates :date, :time, :sport, :skill, :event_name, presence: true
+  validates_uniqueness_of :sport, :case_sensitive => false 
+
 
   # search bar
   # def self.search(search)
