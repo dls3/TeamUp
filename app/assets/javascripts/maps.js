@@ -1,6 +1,5 @@
 function initMap() {
   console.log('inside init map');
-  console.log( document.getElementById('map'));
 
   var toronto = new google.maps.LatLng(43.7072,-79.4046);
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -24,7 +23,7 @@ function initMap() {
             map: map,
             position: {lat: long, lng: lat},
             animation: google.maps.Animation.DROP,
-            icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
+            icon: '/tennis-18.png',
             title: results["courts"][i]["name"]
             });
           }
@@ -33,7 +32,7 @@ function initMap() {
             map: map,
             position: {lat: long, lng: lat},
             animation: google.maps.Animation.DROP,
-            icon: 'https://maps.google.com/mapfiles/ms/icons/purple-dot.png',
+            icon: '/basketball-18.png',
             title: results["courts"][i]["name"]
           });
         }
@@ -42,7 +41,7 @@ function initMap() {
             map: map,
             position: {lat: long, lng: lat},
             animation: google.maps.Animation.DROP,
-            icon: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+            icon: '/whistle-18.png',
             title: results["courts"][i]["name"]
           });
         }
@@ -73,7 +72,7 @@ function AddInfowWindow(marker, contentString) {
     if (!marker.open) {
         infoWindow.open(map,marker);
         marker.open = true;
-    }
+      }
     else {
         infoWindow.close();
         marker.open = false;
