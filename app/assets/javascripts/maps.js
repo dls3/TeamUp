@@ -30,17 +30,11 @@ function initMap() {
     method: 'GET',
     dataType: 'json'
   }).done(function(results) {
-      // console.log(results["courts"].length);
 
-      for (var i = 0; i <= results["courts"].length; i++) {
-      // for (var i = 0; i <= 10; i++) {
-        // results = results["courts"][i]
+      for (var i = 0; i < results["courts"].length; i++) {
 
         var lat = Number(results["courts"][i]["lat"]);
         var long = Number(results["courts"][i]["long"]);
-
-        console.log(lat, long);
-        console.log(typeof(lat));
 
         // var myLatLng = {lat: Number(results["courts"][i]["lat"]), lng: Number(results["courts"][i]["long"]);
 
