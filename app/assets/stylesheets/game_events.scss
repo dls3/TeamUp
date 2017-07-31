@@ -35,5 +35,81 @@
   background-color: white;
   margin-top: -150px;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
+}
+
+.div_links a {
+  display: inline-block;
+}
+
+#join_link a:hover {
+  font-size: 15px;
+}
+
+#join_link a{
+  text-shadow: none;
+  border-radius: 8px;
+  background-color: #29B3E6; /* #3E93EF */
+  border: none;
+  color: white;
+  margin: 8px;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+}
+
+#edit_link a:hover {
+  font-size: 15px;
+}
+
+#edit_link a{
+  text-shadow: none;
+  border-radius: 8px;
+  background-color: #29B3E6; /* #3E93EF */
+  border: none;
+  color: white;
+  margin: 8px;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+}
+
+#delete_link a:hover {
+  font-size: 15px;
+}
+
+#delete_link a{
+  text-shadow: none;
+  border-radius: 8px;
+  background-color: #29B3E6; /* #3E93EF */
+  border: none;
+  color: white;
+  margin: 8px;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+}
+
+.games h2 a{
+  text-shadow: none;
+  border-radius: 8px;
+  background-color: #F2981C;
+  border: none;
+  color: white;
+  margin: 8px;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.games h2 a:hover{
+  font-size: 20px;
 }

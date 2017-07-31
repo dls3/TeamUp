@@ -18,11 +18,12 @@
   color: #4B4B4B;
   text-shadow: .5px .5px grey;
   text-align: center;
-  padding-top: 2px;
   padding-bottom: 2px;
+  padding-right: 20px;
   margin: auto;
   z-index: 100;
   position: fixed;
+  height: 90px;
 }
 
 .user-nav {
@@ -42,6 +43,7 @@ ul li {
   padding: 0;
   overflow: hidden;
   display: inline-block;
+  padding-top: 10px;
 }
 
 ul a {
@@ -64,6 +66,7 @@ a:visited {
 }
 
 a:hover{
+  font-weight: bold;
   color: 	#81d0ba;
   text-shadow: 1px 1px white;
 }
