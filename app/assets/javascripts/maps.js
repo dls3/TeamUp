@@ -2,7 +2,7 @@ function initMap() {
   console.log('inside init map');
   console.log( document.getElementById('map'));
 
-  var toronto = new google.maps.LatLng(43.642,-79.387);
+  var toronto = new google.maps.LatLng(43.7072,-79.4046);
   var map = new google.maps.Map(document.getElementById('map'), {
     center: toronto,
     zoom: 11
