@@ -23,8 +23,8 @@ function initMap() {
             map: map,
             position: {lat: long, lng: lat},
             animation: google.maps.Animation.DROP,
-            icon: '/app/assets/images/tennis.svg',
-            // icon: '/tenins.svg'
+            icon: '/tennis-18.png',
+            // icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
             title: results["courts"][i]["name"]
             });
           }
@@ -33,7 +33,8 @@ function initMap() {
             map: map,
             position: {lat: long, lng: lat},
             animation: google.maps.Animation.DROP,
-            icon: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png',
+            icon: '/basketball-18.png',
+            // icon: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png',
             title: results["courts"][i]["name"]
           });
         }
@@ -42,8 +43,8 @@ function initMap() {
             map: map,
             position: {lat: long, lng: lat},
             animation: google.maps.Animation.DROP,
-            icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-            // icon: '/ice-skating.svg',
+            // icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+            icon: '/whistle-18.png',
             title: results["courts"][i]["name"]
           });
         }
