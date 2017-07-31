@@ -14,6 +14,8 @@
       <% @games.each do |game| %>
         <h2><%=link_to game.event_name, game_path(game.id)  %> </h2>
         <p>Sport: <%= game.sport %></p>
+        <p> Address: <%= game.address %> </p>
+        <p> Neighbourhood: <%=game.neighbourhood %></p>
         <p>Players Needed: <%= game.players_needed %> </p>
         <p>Currently Have: <%= game.current_players %> </p>
         <p>Skill: <%= game.skill %> </p>
