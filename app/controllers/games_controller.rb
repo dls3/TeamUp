@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  attr_accessor :date, :time, :players_needed, :current_players, :description, :skill
+  attr_accessor :date, :time, :players_needed, :current_players, :description, :skill, :address, :neighbourhood
 
 
   def index
@@ -29,7 +29,7 @@ end
 
 
   def game_params
-    params.required(:game).permit(:date, :time, :sport, :current_players, :players_needed, :event_name, :skill, :description)
+    params.required(:game).permit(:date, :time, :sport, :current_players, :players_needed, :event_name, :skill, :description, :address, :neighbourhood)
   end
 
   def create
@@ -81,5 +81,5 @@ end
 
   private
   def game_params
-    params.require(:game).permit(:date, :time, :skill, :sport, :event_name, :players_needed, :current_players)
+    params.require(:game).permit(:date, :time, :skill, :sport, :event_name, :players_needed, :current_players, :address, :neighbourhood)
   end

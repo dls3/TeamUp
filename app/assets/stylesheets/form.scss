@@ -1,4 +1,5 @@
 input[type="submit"]{
+  font-family: 'Raleway', sans-serif;
   border-radius: 8px;
   background-color: #4CAF50; /* Green */
   border: none;
@@ -8,11 +9,11 @@ input[type="submit"]{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 input[type="submit"]:hover {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 #exit-form {
@@ -29,5 +30,5 @@ input[type="submit"]:hover {
 }
 
 #exit-form:hover {
-  font-size: 14px;
+  font-size: 16px;
 }

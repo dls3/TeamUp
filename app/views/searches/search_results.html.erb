@@ -1,15 +1,26 @@
 <center>
+
+  <div class = "index_container" id = "search_game_image">
+  </div>
+
+  <div class = "dash_banner">
+       <div class = "dash_header">MY GAMES</div>
+    </div>
+
+  <div class = "game_container">
   <div class="games">
   <% @games.each do |game| %>
-    <h3><%= link_to game.event_name, game_path(game.id) %></h3>
+    <h3 id= "search_name"><%= link_to game.event_name, game_path(game.id) %></h3>
     <p>Sport: <%= game.sport %></p>
     <p>Players Needed: <%= game.players_needed %> </p>
     <p>Currently Have: <%= game.current_players %> </p>
     <p>Skill: <%= game.skill %> </p>
     <p> Date: <%= game.date %> </p>
     <p>Time: <%= game.time %> </p>
-  <% end %>
+    <p> --------------------</p>
+  <%end%>
 
+</div>
 </div>
 
 </center>

@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .showgame {
-  font-family: 'Proxima Nova';
+  font-family: 'Raleway', sans-serif;
   font-size: 22px;
   text-align: center;
   width: 70%;
@@ -43,10 +43,11 @@
 }
 
 #join_link a:hover {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 #join_link a{
+  font-family: 'Raleway', sans-serif;
   text-shadow: none;
   border-radius: 8px;
   background-color: #29B3E6; /* #3E93EF */
@@ -57,14 +58,15 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 #edit_link a:hover {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 #edit_link a{
+  font-family: 'Raleway', sans-serif;
   text-shadow: none;
   border-radius: 8px;
   background-color: #29B3E6; /* #3E93EF */
@@ -75,14 +77,15 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 #delete_link a:hover {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 #delete_link a{
+  font-family: 'Raleway', sans-serif;
   text-shadow: none;
   border-radius: 8px;
   background-color: #29B3E6; /* #3E93EF */
@@ -93,10 +96,11 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .games h2 a{
+  font-family: 'Raleway', sans-serif;
   text-shadow: none;
   border-radius: 8px;
   background-color: #F2981C;
