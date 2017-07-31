@@ -8,23 +8,6 @@ function initMap() {
     zoom: 11
   });
 
-  var image = {
-    url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-    // This marker is 20 pixels wide by 32 pixels high.
-    size: new google.maps.Size(20, 32),
-    // The origin for this image is (0, 0).
-    origin: new google.maps.Point(0, 0),
-    // The anchor for this image is the base of the flagpole at (0, 32).
-    anchor: new google.maps.Point(0, 32)
-  };
-  // Shapes define the clickable region of the icon. The type defines an HTML
-  // <area> element 'poly' which traces out a polygon as a series of X,Y points.
-  // The final coordinate closes the poly by connecting to the first coordinate.
-  var shape = {
-    coords: [1, 1, 1, 20, 18, 20, 18, 1],
-    type: 'poly'
-  };
-
   $.ajax({
     url: '/courts',
     method: 'GET',
@@ -36,23 +19,40 @@ function initMap() {
         var lat = Number(results["courts"][i]["lat"]);
         var long = Number(results["courts"][i]["long"]);
 
-        // var myLatLng = {lat: Number(results["courts"][i]["lat"]), lng: Number(results["courts"][i]["long"]);
+        if (results["courts"][i]["sport"] === "Tennis") {
+          var marker = new google.maps.Marker({
+            map: map,
+            position: {lat: long, lng: lat},
+            animation: google.maps.Animation.DROP,
+            icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+            title: results["courts"][i]["name"]
+            });
+          }
+        else if (results["courts"][i]["sport"] === "Basketball") {
+          var marker = new google.maps.Marker({
+            map: map,
+            position: {lat: long, lng: lat},
+            animation: google.maps.Animation.DROP,
+            icon: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png',
+            title: results["courts"][i]["name"]
+          });
+        }
+         else {
+          var marker = new google.maps.Marker({
+            map: map,
+            position: {lat: long, lng: lat},
+            animation: google.maps.Animation.DROP,
+            icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+            title: results["courts"][i]["name"]
+          });
+        }
 
-        var marker = new google.maps.Marker({
-          map: map,
-          // position: {lat: Number(results["courts"][i]["lat"]), lng: Number(results["courts"][i]["long"])},
-          position: {lat: long, lng: lat},
-          animation: google.maps.Animation.DROP,
-          icon: image,
-          shape: shape,
-          title: results["courts"][i]["name"]
-        });
         var contentString = '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-        '<div id="bodyContent">'+ '<p><b>Click here</b> to join this game of ' + results["courts"][i]["sport"] + ' at <br>' + results["courts"][i]["name"] + '</p></div>';
+        '<div id="bodyContent">'+ '<p><b>Click here</b> to join this game of ' + results["courts"][i]["sport"].toLowerCase() + ' at <br>' + results["courts"][i]["name"] + '</p></div>';
 
         AddInfowWindow(marker, contentString);
 
-      }   // CLOSE LOOP
+      };   // CLOSE LOOP
 
     })  // *** CLOSES DONE FUNCTION ***
     .done( function() {
