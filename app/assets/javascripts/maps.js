@@ -48,7 +48,7 @@ function initMap() {
         }
 
         var contentString = '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-        '<div id="bodyContent">'+ '<p><b>Click here</b> to join this game of ' + results["courts"][i]["sport"] + ' at <br>' + results["courts"][i]["name"] + '</p></div>';
+        '<div id="bodyContent">'+ '<p><b>Click here</b> to join this game of ' + results["courts"][i]["sport"].toLowerCase() + ' at <br>' + results["courts"][i]["name"] + '</p></div>';
 
         AddInfowWindow(marker, contentString);
 
