@@ -12,16 +12,15 @@
   /*font-family: 'Allerta Stencil';*/
   font-weight: bold;
   font-family: 'Raleway', sans-serif;
-  text-shadow: 2px 2px grey;
   font-size: 22px;
   color: white;
   text-align: center;
-  background-color: #C8D5B3;
+  background-color: #0E5F56;
   width: 70%;
   height:330px;
   margin: auto;
   padding-top: 10px;
   padding-bottom: 90px;
-  border-left: #C8D5B3 250px solid;
-  border-right:#C8D5B3 250px solid;
+  border-left: #0E5F56 250px solid;
+  border-right:#0E5F56 250px solid;
 }
