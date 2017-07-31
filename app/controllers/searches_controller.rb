@@ -7,6 +7,8 @@ class SearchesController < ApplicationController
     # @games.where(['sport' = ? OR 'neighbourhood' = ?, :sport, :neighbourhood])
     # Game.where(sport: '?')
 
+    @games = Game.where("sport ILIKE ?", "%#{params[:sport]}%")
+    @games = Game.where("neighbourhood ILIKE ?", "%#{params[:neighbourhood]}%")
     # filter thrugh the games code
 
   end
