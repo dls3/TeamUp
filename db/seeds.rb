@@ -21,6 +21,8 @@ csv.each do |row|  # headers become keys
     court.neighbourhood = row['DISTRICT']
     court.lat = row['Lat']
     court.long = row['Long']
+    court.num_courts = row['Num_courts']
+    court.sport = row['Sport']
     court.save
     puts "#{court.name} was saved"
   end
