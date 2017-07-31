@@ -42,7 +42,7 @@ function initMap() {
             map: map,
             position: {lat: long, lng: lat},
             animation: google.maps.Animation.DROP,
-            icon: '/whistle-18.png',
+            icon: '/whistle-2.png',
             title: results["courts"][i]["name"]
           });
         }
