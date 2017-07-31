@@ -21,20 +21,22 @@
 <!-- game_rsvp_path(game_id:@game.id) %>  -->
 <br />
 <br />
+<div class = "div_links">
 <% if current_user %>
-  <%= link_to "Join", users_join_games_path(game_id: @game.id, user_id: current_user.id) %> <br /><br />
+  <div id="join_link"><%= link_to "Join", users_join_games_path(game_id: @game.id, user_id: current_user.id) %>  </div>
 <% else %>
   <%= link_to "Sign Up", new_user_path %>
 <% end %>
 <% if current_user.id == @game.user_id%>
-  <%= link_to "Edit Game", edit_game_path(@game) %> <br /><br />
-  <%=link_to("Delete", game_path(@game.id), method: :delete, data: {confirm: "Are you sure you want to delete?"}) %> <br /><br />
+  <div id="edit_link"><%= link_to "Edit Game", edit_game_path(@game) %>  </div>
+  <div id="delete_link"><%=link_to("Delete", game_path(@game.id), method: :delete, data: {confirm: "Are you sure you want to delete?"}) %>  </div>
 <% end %>
-
-
 </div>
 
-<%= link_to("Back to Home", root_url, class:'back_home') %>
+<br />
+<br />
+</div>
+
 
 </div>
 </div>
