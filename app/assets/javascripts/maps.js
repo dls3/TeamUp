@@ -1,8 +1,7 @@
 function initMap() {
   console.log('inside init map');
-  console.log( document.getElementById('map'));
 
-  var toronto = new google.maps.LatLng(43.642,-79.387);
+  var toronto = new google.maps.LatLng(43.7072,-79.4046);
   var map = new google.maps.Map(document.getElementById('map'), {
     center: toronto,
     zoom: 11
@@ -24,7 +23,8 @@ function initMap() {
             map: map,
             position: {lat: long, lng: lat},
             animation: google.maps.Animation.DROP,
-            icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+            icon: '/app/assets/images/tennis.svg',
+            // icon: '/tenins.svg'
             title: results["courts"][i]["name"]
             });
           }
@@ -43,6 +43,7 @@ function initMap() {
             position: {lat: long, lng: lat},
             animation: google.maps.Animation.DROP,
             icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+            // icon: '/ice-skating.svg',
             title: results["courts"][i]["name"]
           });
         }
@@ -73,7 +74,7 @@ function AddInfowWindow(marker, contentString) {
     if (!marker.open) {
         infoWindow.open(map,marker);
         marker.open = true;
-    }
+      }
     else {
         infoWindow.close();
         marker.open = false;
