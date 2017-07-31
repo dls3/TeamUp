@@ -7,7 +7,7 @@
     </div>
 
 <div class = "user_info">
-  <h3 class = "user-name"> <%= "Hello #{@user.name}"%> </h3>
+  <h3 class = "user-name"> <%= "Hello #{@user.name} !"%> </h3>
   <p class = "email">EMAIL: <%= @user.email %></p>
 
 <% if current_user %>
@@ -29,7 +29,7 @@
       <% @games.each do |game| %>
         <% game_id = game.id %>
       <% end %>
-      <%= link_to "Joined Games", rsvp_index_path %>
+      <div class = "link2"><%= link_to "Joined Games", rsvp_index_path %></div>
 <% end %>
 </div>
 </div>

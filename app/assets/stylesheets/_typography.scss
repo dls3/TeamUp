@@ -1,17 +1,29 @@
 html {
-  font-family: 'Proxima Nova';
+  font-family: 'Raleway', sans-serif;
   color: #4B4B4B;
   font-size: 16px;
   line-height: 1.35;
   width: 100%
 }
 
+#logo {
+  font-family: 'Graduate', cursive;
+  text-shadow: 0px 0px 10px grey;
+  font-size: 60px;
+  left: 20px;
+  position: fixed;
+}
+
+
 .navbar {
-  font-family: 'Proxima Nova';
+  font-family: 'Raleway', sans-serif;
   letter-spacing: -1.2px;
   color: #4B4B4B;
   font-size: 20px;
-  width: 100%
+  width: 100%;
+  left: -20px;
+  height: 90px;
+  position: fixed;
 }
 
 .field {

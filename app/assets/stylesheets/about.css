@@ -10,8 +10,9 @@
 
 .about {
   /*font-family: 'Allerta Stencil';*/
-  font-family: 'Proxima Nova';
-  text-shadow: 1px 1px grey;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 2px 2px grey;
   font-size: 22px;
   color: white;
   text-align: center;
@@ -20,7 +21,7 @@
   height:330px;
   margin: auto;
   padding-top: 10px;
-  padding-bottom: 60px;
+  padding-bottom: 90px;
   border-left: #C8D5B3 250px solid;
   border-right:#C8D5B3 250px solid;
 }

@@ -34,6 +34,16 @@
 </div>
 
 <div class='field'>
+  <%=f.label :address, "Address" %><br>
+  <%= f.text_field :address %>
+</div>
+
+<div class='field'>
+  <%=f.label :neighbourhood, "Neighbourhood" %><br>
+  <%= f.select(:neighbourhood, ["North York", "Waterfront", "Etobicoke", "Toronto East York", "S  carborough" ]) %>
+</div>
+
+<div class='field'>
   <%=f.label :skill, "Skill Level" %><br>
   <%= f.select(:skill, ["Beginner", "Intermediate", "Pro" ]) %>
 </div>
