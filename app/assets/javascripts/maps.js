@@ -51,8 +51,8 @@ function initMap() {
 
 
         // <%= link_to "Click here", users_join_games_path %>
-        var contentString = '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-        '<div id="bodyContent">'+ '<p><b><a href="/games/new">Click here</a></b> to join this game of ' + results["courts"][i]["sport"].toLowerCase() + ' at <br>' + results["courts"][i]["name"] + '</p></div>';
+        var contentString = '<h3 id="firstHeading" class="firstHeading">Start a game!</h3>'+
+        '<div id="bodyContent">'+ '<p><b><a href="/games/new">Click here</a></b> to start a game of ' + results["courts"][i]["sport"].toLowerCase() + ' at <br>' + results["courts"][i]["name"] + '</p></div>';
 
         AddInfowWindow(marker, contentString);
 
