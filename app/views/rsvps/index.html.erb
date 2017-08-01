@@ -1,3 +1,4 @@
+
 <div class = "index_container" id = "join_join_image">
   </div>
 
@@ -6,6 +7,11 @@
     </div>
 
 <div class = "joined_games">
+
+
+<div class = "joined">
+
+<h1>Your Joined Games</h1>
 
 <% @rsvps.each do |rsvp| %>
   <ul>
@@ -22,7 +28,11 @@
   </ul>
 <% end %>
 
+
 <%= link_to 'Back to Profile', users_profile_path, class: 'back_profile' %>
 
 </div>
 </center>
+
+</div>
+

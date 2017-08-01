@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  attr_accessor :date, :time, :players_needed, :current_players, :description, :skill, :address, :neighbourhood
+  attr_accessor :date, :time, :sport, :players_needed, :current_players, :description, :skill, :address, :neighbourhood
 
 
   def index
@@ -8,14 +8,11 @@ class GamesController < ApplicationController
 
     # search bar
     if params[:search]
-      @games = Game.search(params[:search]).order("created_at DESC")
+      @games = Game.search(params[:search].order("created_at DESC")
     else
       @games = Game.all.order('created_at DESC')
   end
 end
-
-
-
 
   def show
     @game = Game.find(params[:id])
