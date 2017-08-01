@@ -48,7 +48,7 @@ end
   end
 
   def current_user
-      render json: {id: current_user.id}
+    render json: {id: current_user.id}
   end
 
 

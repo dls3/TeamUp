@@ -12,6 +12,12 @@ function initMap() {
     dataType: 'json'
   }).done(function(results) {
 
+    var userId = null;
+    $.get('/current_user', function(result){
+      userID = result.id;
+      console.log(userID)
+    });
+
       for (var i = 0; i < results["courts"].length; i++) {
 
         var lat = Number(results["courts"][i]["lat"]);
@@ -44,11 +50,6 @@ function initMap() {
             title: results["courts"][i]["name"]
           });
         }
-
-
-        $.get('/current_user', function(result){
-          var userID = result.id;
-        });
 
           // <%= link_to "Click here", rsvps_path(user_id: current_user.id) %>
 
