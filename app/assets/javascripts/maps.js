@@ -1,11 +1,12 @@
-function initMap() {
-  console.log('inside init map');
 
-  var toronto = new google.maps.LatLng(43.7072,-79.4046);
+function initMap() {
+  var toronto = new google.maps.LatLng(43.6629,-79.3957);
   var map = new google.maps.Map(document.getElementById('map'), {
     center: toronto,
-    zoom: 11
+    zoom: 12,
+    mapTypeId: 'satellite'
   });
+
 
   $.ajax({
     url: '/courts',
@@ -41,7 +42,7 @@ function initMap() {
             map: map,
             position: {lat: long, lng: lat},
             animation: google.maps.Animation.DROP,
-            icon: '/whistle-18.png',
+            icon: '/whistle-2.png',
             title: results["courts"][i]["name"]
           });
         }
