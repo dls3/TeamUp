@@ -1,40 +1,43 @@
 class GamesController < ApplicationController
-  attr_accessor :date, :time, :sport, :players_needed, :current_players, :description, :skill, :address, :neighbourhood
+  attr_accessor :date, :time, :players_needed, :current_players, :description, :skill, :address, :neighbourhood
 
 
-  def index
+ def index
     @games = Game.all
     @games = @games.order(:end_date)
 
-    # search bar
+   # search bar
     if params[:search]
-      @games = Game.search(params[:search].order("created_at DESC")
+      @games = Game.search(params[:search]).order(“created_at DESC”)
     else
-      @games = Game.all.order('created_at DESC')
+      @games = Game.all.order(‘created_at DESC’)
   end
 end
 
-  def show
+
+
+
+ def show
     @game = Game.find(params[:id])
   end
 
 
-  def new
+ def new
     @game = Game.new
     @user = User.find_by id: params["user_id"]
   end
 
 
-  def game_params
+ def game_params
     params.required(:game).permit(:date, :time, :sport, :current_players, :players_needed, :event_name, :skill, :description, :address, :neighbourhood)
   end
 
-  def create
+ def create
     @game = Game.new(game_params)
     # @game.user_id = session[:user_id]
     @game.user_id = current_user.id
 
-    if @game.save
+   if @game.save
       # redirect_to game_path(params[:game_id])
       redirect_to game_url(@game)
     else
@@ -43,22 +46,22 @@ end
   end
 
 
-  def edit
+ def edit
     @game = Game.find(params[:id])
 
-    if current_user.id == @game.user_id
+   if current_user.id == @game.user_id
       render :edit_event
     else
-      flash[:alert] = 'Please login in order to edit this game'
+      flash[:alert] = "Please login in order to edit this game"
       redirect_to root_path
     end
   end
 
 
-  def update
+ def update
     @game = Game.find(params[:id])
     if @game.update_attributes(game_params)
-      flash[:notice] = "Game Updated!"
+      flash[:notice] = “Game Updated!”
       redirect_to game_url(@game)
     else
       # redirect_back_or_to @game
@@ -66,17 +69,17 @@ end
     end
   end
 
-  def destroy
+ def destroy
     @game = Game.find(params[:id])
     @game.destroy
-    flash[:alert] = "Game removed"
+    flash[:alert] = “Game removed”
     redirect_to users_own_games_path
   end
 
 
 end
 
-  private
+ private
   def game_params
     params.require(:game).permit(:date, :time, :skill, :sport, :event_name, :players_needed, :current_players, :address, :neighbourhood)
   end

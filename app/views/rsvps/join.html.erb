@@ -13,6 +13,8 @@
     <li>
       <% m = Game.find_by(id:rsvp.game_id) %>
       <p id="name"><%= m.event_name %> </p>
+      <p> Address: <%=m.address %></p>
+      <p> Neighbourhood: <%=m.neighbourhood %></p>
       <p> Sport: <%= m.sport %> </p>
       <p> Players Needed: <%= m.players_needed %> </p>
       <p> Current Players: <%= m.current_players %> </p>
@@ -23,7 +25,9 @@
   </ul>
 <% end %>
 
+<h3 id="back">
 <%= link_to 'Back to Profile', users_profile_path, class: 'back_profile' %>
+</h3>
 
 </div>
 </center>
