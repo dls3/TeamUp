@@ -1,4 +1,3 @@
-
 function initMap() {
   var toronto = new google.maps.LatLng(43.6629,-79.3957);
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -6,7 +5,6 @@ function initMap() {
     zoom: 12,
     mapTypeId: 'satellite'
   });
-
 
   $.ajax({
     url: '/courts',
@@ -48,11 +46,14 @@ function initMap() {
         }
 
 
+        $.get('/current_user', function(result){
+          var userID = result.id;
+        });
 
+          // <%= link_to "Click here", rsvps_path(user_id: current_user.id) %>
 
-        // <%= link_to "Click here", users_join_games_path %>
         var contentString = '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-        '<div id="bodyContent">'+ '<p><b><a href="/games/new">Click here</a></b> to join this game of ' + results["courts"][i]["sport"].toLowerCase() + ' at <br>' + results["courts"][i]["name"] + '</p></div>';
+        '<div id="bodyContent">'+ '<p><b><a href="/rsvps?user_id="' + userID +  '>Click here</a></b> to join this game of ' + results["courts"][i]["sport"].toLowerCase() + ' at <br>' + results["courts"][i]["name"] + '</p></div>';
 
         AddInfowWindow(marker, contentString);
 
