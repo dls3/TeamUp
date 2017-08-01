@@ -1,21 +1,26 @@
 #index_image {
   background-image: url("birdeye.jpeg");
+  background-repeat: no-repeat;
 }
 
 #profile_image {
   background-image: url("skateboard.jpg");
+  background-repeat: no-repeat;
 }
 
 #about_image {
   background-image: url("newtennis.jpg");
+  background-repeat: no-repeat;
 }
 
 #edit_game_image {
   background-image: url("baseball.jpg");
+background-repeat: no-repeat;
 }
 
 #game_index_image {
   background-image: url("basket.jpg");
+  background-repeat: no-repeat;
 }
 
 #new_game_image {
@@ -25,16 +30,18 @@
 
 #search_image {
   background-image: url("bballcourt.jpg");
+  background-repeat: no-repeat;
 }
 
 #new_user_image {
   background-image: url("hockey1.jpeg");
   height: 600px;
-  repeat: none;
+  background-repeat: no-repeat;
 }
 
 #user_game_image {
   background-image: url("soccer.jpg");
+  background-repeat: no-repeat;
 }
 
 #show_game_image {
@@ -46,16 +53,20 @@
   position: absolute;
   top:0;
   left: 0;
+  background-repeat: no-repeat;
 }
 
 #search_game_image{
   background-image: url("teniss.jpeg");
+  background-repeat: no-repeat;
 }
 
 #join_game_image{
   background-image: url("ref.jpeg");
+  background-repeat: no-repeat;
 }
 
 #join_join_image{
   background-image: url("balltennis.jpeg");
+  background-repeat: no-repeat;
 }
