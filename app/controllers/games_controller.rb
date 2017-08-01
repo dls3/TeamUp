@@ -61,7 +61,7 @@ end
  def update
     @game = Game.find(params[:id])
     if @game.update_attributes(game_params)
-      flash[:notice] = “Game Updated!”
+      flash[:notice] = "Game Updated!"
       redirect_to game_url(@game)
     else
       # redirect_back_or_to @game
