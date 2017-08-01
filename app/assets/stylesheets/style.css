@@ -87,6 +87,7 @@ body{
 
 #footer {
     position: fixed;
+    color: white;
     right: 0;
     bottom: 0;
     left: 0;
@@ -95,7 +96,7 @@ body{
     background-color: #efefef;
     text-align: center;
     margin: 0 auto;
-    text-shadow: .5px .5px grey;
+    text-shadow: 1px 1  px grey;
 }
 
 center {

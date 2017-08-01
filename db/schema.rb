@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20170731201821) do
     t.datetime "updated_at", null: false
     t.float "lat"
     t.float "long"
+    t.integer "num_courts"
+    t.string "sport"
   end
 
   create_table "games", force: :cascade do |t|

@@ -3,7 +3,8 @@ class RsvpsController < ApplicationController
 # before_action :rsvp?, only: [:show, :destroy]
 
   def index
-    @rsvps = Rsvp.where(user_id: params[:user_id], game_id: params[:game_id])
+  puts params.inspect
+  @rsvps = Rsvp.where(user_id: params[:user_id])
   end
 
   def show
@@ -39,14 +40,11 @@ class RsvpsController < ApplicationController
     flash[:notice] = "Your RSVP has been successfully cancelled"
     redirect_to profile_path
   end
-end
 
-private
+  private
 
   def rsvp_params
     params.require(:rsvps).permit(:user_id, :game_id)
   end
-  #
-  # def game?
-  #   @game = Game.find(params[:game_id])
-  # end
+
+end

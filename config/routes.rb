@@ -26,8 +26,7 @@ Rails.application.routes.draw do
 
   get '/courts' => 'court_fields#populate'
 
-  post '/rsvp/index' => 'rsvps#index'
-  get '/rsvp/index' => 'rsvps#index'
+
 
 
 
@@ -36,6 +35,7 @@ Rails.application.routes.draw do
   # resources :games, only: [:new, :create, :show, :edit, :update]
   resource :games, only: %i(new create edit update destroy)
   resources :dashboard
+  resources :rsvps, only: :index
   resources :games do
   end
 

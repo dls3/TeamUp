@@ -1,6 +1,7 @@
 // Place all the styles related to the search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 #sport {
   background-color: white;
   padding: 10px;
@@ -23,4 +24,22 @@
   text-shadow: none;
   box-shadow: none; 
 
+
+.game_container{
+  margin-top: 40px; 
+}
+
+#search_name a{
+  font-family: 'Raleway', sans-serif;
+  text-shadow: none;
+  border-radius: 8px;
+  background-color: #F2981C;
+  border: none;
+  color: white;
+  margin: 8px;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
 }
