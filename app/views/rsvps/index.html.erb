@@ -1,4 +1,4 @@
-
+<center>
 <div class = "index_container" id = "join_join_image">
   </div>
 
@@ -6,19 +6,23 @@
        <div class = "dash_header">YOUR JOINED GAMES</div>
     </div>
 
+    <h3 id="back">
+    <%= link_to 'Back', users_profile_path, class: 'back_profile' %>
+    </h3>
+
 <div class = "joined_games">
 
 
 <div class = "joined">
 
-<h1>Your Joined Games</h1>
-
 <% @rsvps.each do |rsvp| %>
   <ul>
     <li>
       <% m = Game.find_by(id:rsvp.game_id) %>
-      <p id="name"><%= m.event_name %> </p>
+      <p id="name"><%= m.event_name %> </p> </a>
       <p> Sport: <%= m.sport %> </p>
+      <p> Address: <%= m.address %> </p>
+      <p> Neighbourhood: <%=m.neighbourhood %></p>
       <p> Players Needed: <%= m.players_needed %> </p>
       <p> Current Players: <%= m.current_players %> </p>
       <p> Skill: <%= m.skill %> </p>
@@ -29,10 +33,8 @@
 <% end %>
 
 
-<%= link_to 'Back to Profile', users_profile_path, class: 'back_profile' %>
-
 </div>
+
 </center>
 
 </div>
-

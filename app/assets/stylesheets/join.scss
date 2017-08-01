@@ -5,15 +5,42 @@
 }
 
 .joined_games{
+  padding-left: 0;
+  list-style-type: none;
   background-color: white;
   width: 800px;
-  padding-top: 20px;
+  padding-top: 5px;
   padding-bottom: 20px;
   margin: auto;
   text-align: center;
 }
 
+.joined_games ul{
+  padding-left: 0;
+  list-style-type: none;
+}
 
 .joined{
-  margin-top: 100px;
+  list-style-type: none;
+  padding-left: 0;
+
 }
+
+#back a{
+    font-family: 'Raleway', sans-serif;
+    text-shadow: none;
+    border-radius: 8px;
+    background-color: #F2981C;
+    border: none;
+    color: white;
+    margin: 8px;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+  }
+
+  #back  a:hover{
+    font-size: 20px;
+  }
