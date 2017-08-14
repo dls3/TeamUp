@@ -16,13 +16,13 @@ function initMap() {
 
       for (var i = 0; i < results["courts"].length; i++) {
 
-        var lat = Number(results["courts"][i]["lat"]);
-        var long = Number(results["courts"][i]["long"]);
+        var lat = Number(results["courts"][i]["latitude"]);
+        var long = Number(results["courts"][i]["longitude"]);
 
         if (results["courts"][i]["sport"] === "Tennis") {
           var marker = new google.maps.Marker({
             map: map,
-            position: {lat: long, lng: lat},
+            position: {lat: lat, lng: long},
             animation: google.maps.Animation.DROP,
             icon: '/tennis-18.png',
             title: results["courts"][i]["name"]
@@ -31,7 +31,7 @@ function initMap() {
         else if (results["courts"][i]["sport"] === "Basketball") {
           var marker = new google.maps.Marker({
             map: map,
-            position: {lat: long, lng: lat},
+            position: {lat: lat, lng: long},
             animation: google.maps.Animation.DROP,
             icon: '/basketball-18.png',
             title: results["courts"][i]["name"]
@@ -40,7 +40,7 @@ function initMap() {
          else {
           var marker = new google.maps.Marker({
             map: map,
-            position: {lat: long, lng: lat},
+            position: {lat: lat, lng: long},
             animation: google.maps.Animation.DROP,
             icon: '/whistle-2.png',
             title: results["courts"][i]["name"]

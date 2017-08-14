@@ -27,13 +27,12 @@ class RsvpsController < ApplicationController
      # Get their game ID
      # Find the game object using the ID and then push that into the empty games array
 
+
     if @rsvp.save
       flash[:notice] = "You have RSVP'd for #{@game.event_name} at #{@game.time}"
       render :join
     end
   end
-
-
 
   def destroy
     @rsvp.destroy
