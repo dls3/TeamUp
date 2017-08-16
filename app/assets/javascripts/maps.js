@@ -19,32 +19,21 @@ function initMap() {
         var lat = Number(results["courts"][i]["latitude"]);
         var long = Number(results["courts"][i]["longitude"]);
 
+        var marker = new google.maps.Marker({
+          map: map,
+          position: {lat: lat, lng: long},
+          animation: google.maps.Animation.DROP,
+          title: results["courts"][i]["name"]
+          });
+
         if (results["courts"][i]["sport"] === "Tennis") {
-          var marker = new google.maps.Marker({
-            map: map,
-            position: {lat: lat, lng: long},
-            animation: google.maps.Animation.DROP,
-            icon: '/tennis-18.png',
-            title: results["courts"][i]["name"]
-            });
+          marker.setIcon('/tennis-18.png')
           }
         else if (results["courts"][i]["sport"] === "Basketball") {
-          var marker = new google.maps.Marker({
-            map: map,
-            position: {lat: lat, lng: long},
-            animation: google.maps.Animation.DROP,
-            icon: '/basketball-18.png',
-            title: results["courts"][i]["name"]
-          });
+          marker.setIcon('/basketball-18.png')
         }
          else {
-          var marker = new google.maps.Marker({
-            map: map,
-            position: {lat: lat, lng: long},
-            animation: google.maps.Animation.DROP,
-            icon: '/whistle-2.png',
-            title: results["courts"][i]["name"]
-          });
+          marker.setIcon('/whistle-2.png')
         }
 
         // <%= link_to "Click here", users_join_games_path %>
