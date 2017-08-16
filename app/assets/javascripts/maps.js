@@ -47,9 +47,6 @@ function initMap() {
           });
         }
 
-
-
-
         // <%= link_to "Click here", users_join_games_path %>
         var contentString = '<h3 id="firstHeading" class="firstHeading">Start a game!</h3>'+
         '<div id="bodyContent">'+ '<p><b><a href="/games/new">Click here</a></b> to start a game of ' + results["courts"][i]["sport"].toLowerCase() + ' at <br>' + results["courts"][i]["name"] + '</p></div>';
@@ -61,11 +58,16 @@ function initMap() {
     })  // *** CLOSES DONE FUNCTION ***
     .done( function() {
       console.log("AJAX REQUEST done")
-    }) // *** CLOSES DONE ***
+    }) // *** CLOSES DONE confirmation***
   };  // CLOSES MAIN FUNCTION ***
 
-closeInfoWindow = function() {
-  infoWindow.close();
+var infoWindows = [];   // Create empty global array
+
+function closeAllInfoWindows() {
+  // close all infowindows within the array
+  for (var i = 0; i < infoWindows.length; i++) {
+    infoWindows[i].close();
+  }
 };
 
 function AddInfowWindow(marker, contentString) {
@@ -73,8 +75,12 @@ function AddInfowWindow(marker, contentString) {
   var infoWindow = new google.maps.InfoWindow({
     content: contentString
   });
+  infoWindows.push(infoWindow)
+
   google.maps.event.addListener(marker, 'click', function() {
+    // console.log('Hello world');
     if (!marker.open) {
+      closeAllInfoWindows();
         infoWindow.open(map,marker);
         marker.open = true;
       }
