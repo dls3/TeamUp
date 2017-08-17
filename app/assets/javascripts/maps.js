@@ -16,43 +16,29 @@ function initMap() {
 
       for (var i = 0; i < results["courts"].length; i++) {
 
-        var lat = Number(results["courts"][i]["lat"]);
-        var long = Number(results["courts"][i]["long"]);
+        var lat = Number(results["courts"][i]["latitude"]);
+        var long = Number(results["courts"][i]["longitude"]);
+
+        var marker = new google.maps.Marker({
+          map: map,
+          position: {lat: lat, lng: long},
+          animation: google.maps.Animation.DROP,
+          title: results["courts"][i]["name"]
+          });
 
         if (results["courts"][i]["sport"] === "Tennis") {
-          var marker = new google.maps.Marker({
-            map: map,
-            position: {lat: long, lng: lat},
-            animation: google.maps.Animation.DROP,
-            icon: '/tennis-18.png',
-            title: results["courts"][i]["name"]
-            });
+          marker.setIcon('/tennis-18.png')
           }
         else if (results["courts"][i]["sport"] === "Basketball") {
-          var marker = new google.maps.Marker({
-            map: map,
-            position: {lat: long, lng: lat},
-            animation: google.maps.Animation.DROP,
-            icon: '/basketball-18.png',
-            title: results["courts"][i]["name"]
-          });
+          marker.setIcon('/basketball-18.png')
         }
          else {
-          var marker = new google.maps.Marker({
-            map: map,
-            position: {lat: long, lng: lat},
-            animation: google.maps.Animation.DROP,
-            icon: '/whistle-2.png',
-            title: results["courts"][i]["name"]
-          });
+          marker.setIcon('/whistle-2.png')
         }
 
-
-
-
         // <%= link_to "Click here", users_join_games_path %>
-        var contentString = '<h3 id="firstHeading" class="firstHeading">Join this game!</h3>'+
-        '<div id="bodyContent">'+ '<p><b><a href="/games/new">Click here</a></b> to join this game of ' + results["courts"][i]["sport"].toLowerCase() + ' at <br>' + results["courts"][i]["name"] + '</p></div>';
+        var contentString = '<h3 id="firstHeading" class="firstHeading">Start a game!</h3>'+
+        '<div id="bodyContent">'+ '<p><b><a href="/games/new">Click here</a></b> to start a game of ' + results["courts"][i]["sport"].toLowerCase() + ' at <br>' + results["courts"][i]["name"] + '</p></div>';
 
         AddInfowWindow(marker, contentString);
 
@@ -61,11 +47,16 @@ function initMap() {
     })  // *** CLOSES DONE FUNCTION ***
     .done( function() {
       console.log("AJAX REQUEST done")
-    }) // *** CLOSES DONE ***
+    }) // *** CLOSES DONE confirmation***
   };  // CLOSES MAIN FUNCTION ***
 
-closeInfoWindow = function() {
-  infoWindow.close();
+var infoWindows = [];   // Create empty global array
+
+function closeAllInfoWindows() {
+  // close all infowindows within the array
+  for (var i = 0; i < infoWindows.length; i++) {
+    infoWindows[i].close();
+  }
 };
 
 function AddInfowWindow(marker, contentString) {
@@ -73,8 +64,12 @@ function AddInfowWindow(marker, contentString) {
   var infoWindow = new google.maps.InfoWindow({
     content: contentString
   });
+  infoWindows.push(infoWindow)
+
   google.maps.event.addListener(marker, 'click', function() {
+    // console.log('Hello world');
     if (!marker.open) {
+      closeAllInfoWindows();
         infoWindow.open(map,marker);
         marker.open = true;
       }
